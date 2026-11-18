@@ -40,14 +40,14 @@ trap on_error ERR
 printf 'STAGE 1: verified release download\n'
 curl -fL --retry 2 --connect-timeout 20 --max-time 180 https://github.com/arminsorkheii-spec/power-home-coach/raw/refs/heads/main/power-home-release-92.2-20261119.tar.gz -o "$STAGE/source.tgz"
 printf '%s  %s\n' "$ARCHIVE_SHA" "$STAGE/source.tgz" | sha256sum -c -
-[[ ! -e "$SOURCE" && ! -e "$RUNTIME" ]]
-mkdir "$SOURCE" "$RUNTIME"
+mkdir -p "$SOURCE" "$RUNTIME"
 tar -xzf "$STAGE/source.tgz" -C "$SOURCE"
 printf 'STAGE 2: production build, live service remains online\n'
-if [[ -d /opt/power-home-staging/r917/node_modules ]]; then cp -a /opt/power-home-staging/r917/node_modules "$SOURCE/node_modules"
+if [[ -d "$SOURCE/node_modules" ]]; then :
+elif [[ -d /opt/power-home-staging/r917/node_modules ]]; then cp -a /opt/power-home-staging/r917/node_modules "$SOURCE/node_modules"
 elif [[ -d "$TARGET/node_modules" ]]; then cp -a "$TARGET/node_modules" "$SOURCE/node_modules"
-else (cd "$SOURCE" && npm ci --no-audit --no-fund); fi
-(cd "$SOURCE" && NEXT_TELEMETRY_DISABLED=1 npm run build)
+else docker run --rm -v "$SOURCE:/app" -w /app node:22-bookworm-slim npm ci --no-audit --no-fund; fi
+docker run --rm --network none -e NEXT_TELEMETRY_DISABLED=1 -v "$SOURCE:/app" -w /app node:22-bookworm-slim npm run build
 cp -a "$SOURCE/.next/standalone/." "$RUNTIME/"
 cp -a "$SOURCE/public" "$RUNTIME/public"
 mkdir -p "$RUNTIME/.next"
