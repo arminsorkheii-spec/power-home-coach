@@ -44,11 +44,14 @@ mkdir -p "$SOURCE" "$RUNTIME"
 tar -xzf "$STAGE/source.tgz" -C "$SOURCE"
 printf 'STAGE 2: production build, live service remains online\n'
 # Install the exact lockfile, including the new jose dependency. No production data is mounted.
+if [[ ! -f "$SOURCE/.next/standalone/server.js" ]]; then
 mkdir -p "$STAGE/npm-cache"
 docker run --rm -e npm_config_fetch_retries=2 -e npm_config_fetch_timeout=60000 -v "$STAGE/npm-cache:/root/.npm" -v "$SOURCE:/app" -w /app node:22-bookworm-slim npm ci --no-audit --no-fund --prefer-offline
 docker run --rm --network none -e NEXT_TELEMETRY_DISABLED=1 -v "$SOURCE:/app" -w /app node:22-bookworm-slim npm run build
+fi
 cp -a "$SOURCE/.next/standalone/." "$RUNTIME/"
-cp -a "$SOURCE/public" "$RUNTIME/public"
+mkdir -p "$RUNTIME/public"
+cp -a "$SOURCE/public/." "$RUNTIME/public/"
 mkdir -p "$RUNTIME/.next"
 cp -a "$SOURCE/.next/static" "$RUNTIME/.next/static"
 [[ -f "$RUNTIME/server.js" ]]
