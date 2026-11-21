@@ -38,7 +38,7 @@ on_error() {
 }
 trap on_error ERR
 printf 'STAGE 1: verified release download\n'
-curl -4 --http1.1 -fL --retry 3 --retry-all-errors --connect-timeout 20 --max-time 180 https://github.com/arminsorkheii-spec/power-home-coach/raw/refs/heads/e9a382c4128343857862c10e5cf568d4423df69c/power-home-93.8.2.tar.gz -o "$STAGE/source.tgz"
+curl -4 --http1.1 -fL --retry 3 --retry-all-errors --connect-timeout 20 --max-time 180 https://github.com/arminsorkheii-spec/power-home-coach/raw/e9a382c4128343857862c10e5cf568d4423df69c/power-home-93.8.2.tar.gz -o "$STAGE/source.tgz"
 printf '%s  %s\n' "$ARCHIVE_SHA" "$STAGE/source.tgz" | sha256sum -c -
 mkdir -p "$SOURCE" "$RUNTIME"
 tar -xzf "$STAGE/source.tgz" -C "$SOURCE"
