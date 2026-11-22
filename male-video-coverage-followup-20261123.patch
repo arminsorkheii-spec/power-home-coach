@@ -1,0 +1,1042 @@
+diff --git a/docs/MALE-EXERCISE-VIDEOS.md b/docs/MALE-EXERCISE-VIDEOS.md
+index 005958d..38e1a0f 100644
+--- a/docs/MALE-EXERCISE-VIDEOS.md
++++ b/docs/MALE-EXERCISE-VIDEOS.md
+@@ -1,6 +1,6 @@
+ # Male exercise demonstrations — 94.1.0
+ 
+-290 male-only H.264 MP4 demonstrations, 97 explicit reviewed default exercise mappings. Coach can preview and assign remaining clips in the existing exercise library. No fuzzy automatic mapping or female fallback. This integrated release preserves the video library and adds the separately approved AI module.
++290 male-only H.264 MP4 demonstrations, 112 explicit reviewed default exercise mappings. Coach can preview and assign remaining clips in the existing exercise library. No fuzzy automatic mapping or female fallback. This integrated release preserves the video library and adds the separately approved AI module.
+ 
+ Videos open only on request in a native-control modal in student program and live-workout views. Same-origin authenticated endpoint supports byte ranges for seeking/iOS. Assets live outside the image in APP_DATA_DIR/exercise-videos/male. Coach overrides use the existing state store; no schema migration.
+ 
+diff --git a/docs/RELEASE-94.1.0.md b/docs/RELEASE-94.1.0.md
+index b18646e..b9560bf 100644
+--- a/docs/RELEASE-94.1.0.md
++++ b/docs/RELEASE-94.1.0.md
+@@ -6,7 +6,7 @@ Video modal is centered and capped at640px width with video height capped at40dv
+ 
+ Student exercise technique panel and stats occupy full independent grid rows. Four readable stats on desktop, two columns on mobile; long reps/rest values wrap. Shared StudentExerciseStats is used by the portal and the synthetic responsive QA route.
+ 
+-97 reviewed male clip mappings (up from57), including Standing EZ-Bar Curl. Other exercises without an exact supplied male asset retain their original images; no wrong-equipment fallback is assigned. All290 assets retained.
++112 reviewed male clip mappings (up from57;15additional mappings reviewed2026-11-23), including Standing EZ-Bar Curl. Other exercises without an exact supplied male asset retain their original images; no wrong-equipment fallback is assigned. All290 assets retained.
+ 
+ PDF/PlanPrint rendering files are unchanged. New program layout rules are screen-only. No videos added to PDFs.
+ 
+diff --git a/docs/VIDEO-COVERAGE-STATUS.md b/docs/VIDEO-COVERAGE-STATUS.md
+new file mode 100644
+index 0000000..abeb06b
+--- /dev/null
++++ b/docs/VIDEO-COVERAGE-STATUS.md
+@@ -0,0 +1,17 @@
++# Male video coverage — 2026-11-23
++
++Request: every existing bank exercise must have a correct male demonstration.
++Status: incomplete.300bank exercises;112explicit matches;188missing exact, reviewed male demonstrations.290male assets available. No production install performed during this work; live remained94.0.1when checked.
++
++15additional mappings were reviewed using three frames from each source clip. The review log records mappings and rejected examples. Existing video range/authentication/catalog tests passed(3/3). PDF and printing files unchanged.
++
++The selected Free Exercise DB with Videos has290male clips, including numerous stretches and variants outside the300movement bank. It cannot cover all300specific bank movements. Merely matching muscle group, equipment, or fuzzy names is not sufficient.
++
++Supplemental sources researched:
++- namnq/workout-free-videos:57CC0clips; a downloaded dumbbell bench press sample visually shows a male human-style subject, unlike the requested anatomical animations. No supplemental clips imported or assigned.
++- RepDB Standard: paid anatomical animations; purchase and exact per-variant coverage must be checked before committing. No purchase made.
++- MuscleWiki: paid commercial API/media license; no API key or paid subscription provisioned. No assets copied.
++
++Completion requires additional matching licensed male assets or coach-recorded clips for remaining188movements. Full machine-readable list:video-coverage-audit.json. Never mark this task complete while missing>0.
++
++The prepared94.1.0archive/install script predate these15additional assignments. Apply the follow-up patch and rebuild/repackage with a new checksum before installation. Do not run the older installer claiming these assignments are included.
+diff --git a/docs/video-coverage-audit.json b/docs/video-coverage-audit.json
+new file mode 100644
+index 0000000..3b78615
+--- /dev/null
++++ b/docs/video-coverage-audit.json
+@@ -0,0 +1,948 @@
++{
++  "total": 300,
++  "mapped": 112,
++  "missing": 188,
++  "complete": false,
++  "unmappedExercises": [
++    {
++      "id": "machine-chest-press",
++      "nameFa": "پرس سینه دستگاه دست موازی",
++      "nameEn": "Neutral-Grip Machine Chest Press"
++    },
++    {
++      "id": "standard-grip-machine-chest-press",
++      "nameFa": "پرس سینه دستگاه دست معمولی",
++      "nameEn": "Standard-Grip Machine Chest Press"
++    },
++    {
++      "id": "dumbbell-bench-press",
++      "nameFa": "پرس سینه دمبل",
++      "nameEn": "Dumbbell Bench Press"
++    },
++    {
++      "id": "incline-cable-fly",
++      "nameFa": "فلای بالا سینه سیم‌کش",
++      "nameEn": "Incline Cable Fly"
++    },
++    {
++      "id": "smith-incline-press",
++      "nameFa": "پرس بالا سینه اسمیت",
++      "nameEn": "Smith Machine Incline Press"
++    },
++    {
++      "id": "barbell-row",
++      "nameFa": "زیربغل هالتر خم",
++      "nameEn": "Barbell Row"
++    },
++    {
++      "id": "one-arm-dumbbell-row",
++      "nameFa": "زیربغل دمبل تک‌دست",
++      "nameEn": "One Arm Dumbbell Row"
++    },
++    {
++      "id": "t-bar-row",
++      "nameFa": "زیربغل تی‌بار دستگاه",
++      "nameEn": "Chest-Supported T-Bar Row"
++    },
++    {
++      "id": "reverse-dumbbell-fly",
++      "nameFa": "نشر خم دمبل",
++      "nameEn": "Reverse Dumbbell Fly"
++    },
++    {
++      "id": "seated-dumbbell-rear-delt-raise",
++      "nameFa": "نشر خم دمبل نشسته",
++      "nameEn": "Seated Dumbbell Rear Delt Raise"
++    },
++    {
++      "id": "machine-shoulder-press",
++      "nameFa": "پرس سرشانه دستگاه",
++      "nameEn": "Machine Shoulder Press"
++    },
++    {
++      "id": "hammer-curl",
++      "nameFa": "جلو بازو چکشی دمبل",
++      "nameEn": "Hammer Curl"
++    },
++    {
++      "id": "preacher-curl",
++      "nameFa": "جلو بازو لاری هالتر EZ",
++      "nameEn": "Preacher Curl"
++    },
++    {
++      "id": "reverse-ez-bar-curl",
++      "nameFa": "جلو بازو معکوس هالتر EZ",
++      "nameEn": "Reverse EZ-Bar Curl"
++    },
++    {
++      "id": "dead-bug-legs",
++      "nameFa": "ددباگ پا",
++      "nameEn": "Dead Bug — Legs Only"
++    },
++    {
++      "id": "chin-retraction",
++      "nameFa": "جمع کردن چانه",
++      "nameEn": "Chin Retraction"
++    },
++    {
++      "id": "neutral-lat-pulldown",
++      "nameFa": "لت سیم‌کش دست خنثی",
++      "nameEn": "Neutral-Grip Lat Pulldown"
++    },
++    {
++      "id": "cable-face-pull",
++      "nameFa": "فیس پول سیم‌کش",
++      "nameEn": "Cable Face Pull"
++    },
++    {
++      "id": "cable-curl",
++      "nameFa": "جلو بازو سیم‌کش",
++      "nameEn": "Cable Curl"
++    },
++    {
++      "id": "bird-dog",
++      "nameFa": "برد داگ",
++      "nameEn": "Bird Dog"
++    },
++    {
++      "id": "wall-slide",
++      "nameFa": "وال اسلاید",
++      "nameEn": "Wall Slide"
++    },
++    {
++      "id": "leg-press",
++      "nameFa": "پرس پا خوابیده معمولی",
++      "nameEn": "45-Degree Leg Press — Standard Stance"
++    },
++    {
++      "id": "romanian-deadlift",
++      "nameFa": "ددلیفت رومانیایی هالتر",
++      "nameEn": "Romanian Deadlift"
++    },
++    {
++      "id": "bulgarian-split-squat",
++      "nameFa": "اسپلیت اسکوات بلغاری دمبل",
++      "nameEn": "Bulgarian Split Squat"
++    },
++    {
++      "id": "single-leg-romanian-deadlift",
++      "nameFa": "ددلیفت رومانیایی تک‌پا دمبل",
++      "nameEn": "Single-Leg Romanian Deadlift"
++    },
++    {
++      "id": "glute-bridge",
++      "nameFa": "پل باسن",
++      "nameEn": "Glute Bridge"
++    },
++    {
++      "id": "barbell-hip-thrust",
++      "nameFa": "هیپ تراست هالتر",
++      "nameEn": "Barbell Hip Thrust"
++    },
++    {
++      "id": "cable-glute-kickback",
++      "nameFa": "کیک‌بک باسن سیم‌کش",
++      "nameEn": "Cable Glute Kickback"
++    },
++    {
++      "id": "supported-calf-raise",
++      "nameFa": "ساق پا ایستاده با تکیه",
++      "nameEn": "Supported Calf Raise"
++    },
++    {
++      "id": "tibialis-raise",
++      "nameFa": "تیبیالیس رِیز کنار دیوار",
++      "nameEn": "Wall-Supported Tibialis Raise"
++    },
++    {
++      "id": "kneeling-side-plank",
++      "nameFa": "ساید پلانک زانو زده",
++      "nameEn": "Kneeling Side Plank"
++    },
++    {
++      "id": "captains-chair-knee-raise",
++      "nameFa": "شکم خلبانی زانو خم",
++      "nameEn": "Captains Chair Knee Raise"
++    },
++    {
++      "id": "crunch",
++      "nameFa": "کرانچ شکم",
++      "nameEn": "Crunch"
++    },
++    {
++      "id": "forearm-plank",
++      "nameFa": "پلانک ساعد",
++      "nameEn": "Forearm Plank"
++    },
++    {
++      "id": "dumbbell-pullover",
++      "nameFa": "پول‌اور دمبل روی نیمکت",
++      "nameEn": "Dumbbell Pullover"
++    },
++    {
++      "id": "single-arm-cable-triceps-kickback",
++      "nameFa": "پشت بازو خم تک‌دست سیم‌کش",
++      "nameEn": "Single-Arm Cable Triceps Kickback"
++    },
++    {
++      "id": "assisted-nordic-hamstring-curl",
++      "nameFa": "پشت پا نوردیک کمکی",
++      "nameEn": "Assisted Nordic Hamstring Curl"
++    },
++    {
++      "id": "side-lying-hip-abduction",
++      "nameFa": "دور کردن ران خوابیده به پهلو",
++      "nameEn": "Side-Lying Hip Abduction"
++    },
++    {
++      "id": "ab-wheel-rollout",
++      "nameFa": "رول‌اوت چرخ شکم زانو زده",
++      "nameEn": "Kneeling Ab Wheel Rollout"
++    },
++    {
++      "id": "pallof-press",
++      "nameFa": "پالوف پرس سیم‌کش",
++      "nameEn": "Standing Pallof Press"
++    },
++    {
++      "id": "smith-flat-bench-press",
++      "nameFa": "پرس سینه تخت اسمیت",
++      "nameEn": "Smith Machine Flat Bench Press"
++    },
++    {
++      "id": "single-arm-bayesian-cable-curl",
++      "nameFa": "جلو بازو بیزیَن تک‌دست سیم‌کش",
++      "nameEn": "Single-Arm Bayesian Cable Curl"
++    },
++    {
++      "id": "reverse-grip-triceps-pushdown",
++      "nameFa": "پشت بازو سیم‌کش دست برعکس",
++      "nameEn": "Reverse-Grip Cable Triceps Pushdown"
++    },
++    {
++      "id": "dumbbell-step-up",
++      "nameFa": "استپ‌آپ دمبل",
++      "nameEn": "Dumbbell Step-Up"
++    },
++    {
++      "id": "sumo-deadlift",
++      "nameFa": "ددلیفت سومو هالتر",
++      "nameEn": "Barbell Sumo Deadlift"
++    },
++    {
++      "id": "reverse-crunch",
++      "nameFa": "کرانچ معکوس",
++      "nameEn": "Reverse Crunch"
++    },
++    {
++      "id": "short-lever-copenhagen-plank",
++      "nameFa": "کپنهاگ پلانک اهرم کوتاه",
++      "nameEn": "Short-Lever Copenhagen Side Plank"
++    },
++    {
++      "id": "prone-incline-y-raise",
++      "nameFa": "نشر Y خوابیده روی میز شیب‌دار",
++      "nameEn": "Prone Incline Bench Y Raise"
++    },
++    {
++      "id": "tall-kneeling-single-arm-cable-lat-pulldown",
++      "nameFa": "لت تک‌دست سیم‌کش زانو زده",
++      "nameEn": "Tall-Kneeling Single-Arm Cable Lat Pulldown"
++    },
++    {
++      "id": "standing-side-single-arm-cable-lat-pulldown",
++      "nameFa": "لت تک‌دست کنار دستگاه کراس",
++      "nameEn": "Standing Side Single-Arm Cable Lat Pulldown"
++    },
++    {
++      "id": "smith-reverse-lunge",
++      "nameFa": "لانج معکوس اسمیت",
++      "nameEn": "Smith Machine Reverse Lunge"
++    },
++    {
++      "id": "plate-loaded-chest-supported-row",
++      "nameFa": "قایقی دستگاه صفحه‌ای با تکیه سینه",
++      "nameEn": "Plate-Loaded Chest-Supported Row"
++    },
++    {
++      "id": "plate-loaded-pullover-machine",
++      "nameFa": "پول‌اور دستگاه صفحه‌ای",
++      "nameEn": "Plate-Loaded Pullover Machine"
++    },
++    {
++      "id": "smith-romanian-deadlift",
++      "nameFa": "ددلیفت رومانیایی اسمیت",
++      "nameEn": "Smith Machine Romanian Deadlift"
++    },
++    {
++      "id": "seated-dumbbell-reverse-wrist-curl",
++      "nameFa": "مچ معکوس دمبل نشسته",
++      "nameEn": "Seated Dumbbell Reverse Wrist Curl"
++    },
++    {
++      "id": "seated-single-arm-dumbbell-front-raise",
++      "nameFa": "نشر جلو تک‌دست دمبل نشسته",
++      "nameEn": "Seated Single-Arm Dumbbell Front Raise"
++    },
++    {
++      "id": "smith-close-grip-bench-press",
++      "nameFa": "پرس سینه دست جمع اسمیت",
++      "nameEn": "Smith Machine Close-Grip Bench Press"
++    },
++    {
++      "id": "dumbbell-lateral-lunge",
++      "nameFa": "لانج جانب دمبل",
++      "nameEn": "Dumbbell Lateral Lunge"
++    },
++    {
++      "id": "cable-pull-through",
++      "nameFa": "پول‌ترو سیم‌کش",
++      "nameEn": "Cable Pull-Through"
++    },
++    {
++      "id": "barbell-good-morning",
++      "nameFa": "گود مورنینگ هالتر",
++      "nameEn": "Barbell Good Morning"
++    },
++    {
++      "id": "smith-machine-back-squat",
++      "nameFa": "اسکوات اسمیت",
++      "nameEn": "Smith Machine Back Squat"
++    },
++    {
++      "id": "machine-rear-delt-row",
++      "nameFa": "روئینگ پشت شانه دستگاه با تکیه سینه",
++      "nameEn": "Chest-Supported Rear Delt Row Machine"
++    },
++    {
++      "id": "smith-machine-bent-over-row",
++      "nameFa": "زیربغل هالتر خم اسمیت",
++      "nameEn": "Smith Machine Bent-Over Row"
++    },
++    {
++      "id": "cable-upright-row",
++      "nameFa": "کول سیم‌کش دست جمع",
++      "nameEn": "Cable Upright Row"
++    },
++    {
++      "id": "pendulum-squat",
++      "nameFa": "اسکوات پاندولی دستگاه",
++      "nameEn": "Pendulum Squat Machine"
++    },
++    {
++      "id": "decline-bench-sit-up",
++      "nameFa": "درازونشست روی میز شیب منفی",
++      "nameEn": "Decline Bench Sit-Up"
++    },
++    {
++      "id": "resistance-band-pull-apart",
++      "nameFa": "باز کردن کش از جلو",
++      "nameEn": "Resistance Band Pull-Apart"
++    },
++    {
++      "id": "plate-loaded-decline-chest-press",
++      "nameFa": "پرس زیر سینه دستگاه صفحه‌ای",
++      "nameEn": "Plate-Loaded Decline Chest Press"
++    },
++    {
++      "id": "single-arm-landmine-row",
++      "nameFa": "زیربغل تک‌دست لندماین",
++      "nameEn": "Single-Arm Landmine Row"
++    },
++    {
++      "id": "dumbbell-hammer-preacher-curl",
++      "nameFa": "جلو بازو لاری چکشی دمبل",
++      "nameEn": "Dumbbell Hammer Preacher Curl"
++    },
++    {
++      "id": "single-leg-leg-extension",
++      "nameFa": "جلو پا دستگاه تک‌پا",
++      "nameEn": "Single-Leg Leg Extension"
++    },
++    {
++      "id": "single-leg-45-degree-leg-press",
++      "nameFa": "پرس پا ۴۵ درجه تک‌پا",
++      "nameEn": "Single-Leg 45-Degree Leg Press"
++    },
++    {
++      "id": "alternating-heel-taps",
++      "nameFa": "تاچ پاشنه تناوبی",
++      "nameEn": "Alternating Heel Taps"
++    },
++    {
++      "id": "standing-band-shoulder-external-rotation",
++      "nameFa": "چرخش خارجی شانه با کش ایستاده",
++      "nameEn": "Standing Band Shoulder External Rotation"
++    },
++    {
++      "id": "conventional-barbell-deadlift",
++      "nameFa": "ددلیفت هالتر معمولی",
++      "nameEn": "Conventional Barbell Deadlift"
++    },
++    {
++      "id": "weight-plate-front-raise",
++      "nameFa": "نشر جلو صفحه",
++      "nameEn": "Weight-Plate Front Raise"
++    },
++    {
++      "id": "plate-loaded-belt-squat",
++      "nameFa": "بلت اسکوات دستگاه صفحه‌ای",
++      "nameEn": "Plate-Loaded Belt Squat"
++    },
++    {
++      "id": "standing-cable-hip-abduction",
++      "nameFa": "دورکردن پا سیم‌کش ایستاده",
++      "nameEn": "Standing Cable Hip Abduction"
++    },
++    {
++      "id": "standing-cable-pallof-press",
++      "nameFa": "پالوف پرس سیم‌کش ایستاده",
++      "nameEn": "Standing Cable Pallof Press"
++    },
++    {
++      "id": "dumbbell-squeeze-press",
++      "nameFa": "اسکوییز پرس دمبل",
++      "nameEn": "Dumbbell Squeeze Press"
++    },
++    {
++      "id": "smith-machine-bulgarian-split-squat",
++      "nameFa": "اسپلیت اسکوات بلغاری اسمیت",
++      "nameEn": "Smith Machine Bulgarian Split Squat"
++    },
++    {
++      "id": "decline-push-up",
++      "nameFa": "شنا سوئدی پا بالا",
++      "nameEn": "Decline Push-Up"
++    },
++    {
++      "id": "glute-ham-raise",
++      "nameFa": "گلوت هم رِیز دستگاه",
++      "nameEn": "Glute-Ham Raise"
++    },
++    {
++      "id": "dumbbell-reverse-lunge",
++      "nameFa": "لانج معکوس دمبل",
++      "nameEn": "Dumbbell Reverse Lunge"
++    },
++    {
++      "id": "standing-single-leg-curl-machine",
++      "nameFa": "پشت پا ایستاده تک‌پا دستگاه",
++      "nameEn": "Standing Single-Leg Curl Machine"
++    },
++    {
++      "id": "stability-ball-crunch",
++      "nameFa": "کرانچ روی توپ",
++      "nameEn": "Stability-Ball Crunch"
++    },
++    {
++      "id": "open-book-thoracic-rotation",
++      "nameFa": "چرخش سینه‌ای کتاب‌باز",
++      "nameEn": "Side-Lying Open Book Thoracic Rotation"
++    },
++    {
++      "id": "standing-cable-rear-delt-fly",
++      "nameFa": "نشر پشت‌شانه سیم‌کش ایستاده",
++      "nameEn": "Standing Cable Rear-Delt Fly"
++    },
++    {
++      "id": "scapular-push-up",
++      "nameFa": "شنا کتف",
++      "nameEn": "Scapular Push-Up"
++    },
++    {
++      "id": "full-side-plank-hip-lift",
++      "nameFa": "بالا آوردن لگن در پلانک پهلو",
++      "nameEn": "Full Side Plank Hip Lift"
++    },
++    {
++      "id": "single-arm-dumbbell-bench-press",
++      "nameFa": "پرس سینه دمبل تک‌دست",
++      "nameEn": "Single-Arm Dumbbell Bench Press"
++    },
++    {
++      "id": "smith-machine-front-squat",
++      "nameFa": "فرانت اسکوات اسمیت",
++      "nameEn": "Smith Machine Front Squat"
++    },
++    {
++      "id": "prone-incline-bench-w-raise",
++      "nameFa": "حرکت W روی میز شیب‌دار",
++      "nameEn": "Prone Incline-Bench W Raise"
++    },
++    {
++      "id": "cat-cow-spinal-mobility",
++      "nameFa": "حرکت گربه گاو",
++      "nameEn": "Cat-Cow Spinal Mobility"
++    },
++    {
++      "id": "half-kneeling-landmine-press",
++      "nameFa": "پرس لندماین تک‌دست نیم‌زانو",
++      "nameEn": "Half-Kneeling Single-Arm Landmine Press"
++    },
++    {
++      "id": "barbell-seal-row",
++      "nameFa": "سیل‌رو هالتر",
++      "nameEn": "Barbell Seal Row"
++    },
++    {
++      "id": "barbell-box-squat",
++      "nameFa": "باکس اسکوات هالتر",
++      "nameEn": "Barbell Box Squat"
++    },
++    {
++      "id": "band-overhead-shoulder-mobility-raise",
++      "nameFa": "بالا بردن کش برای موبیلیتی شانه",
++      "nameEn": "Band Overhead Shoulder Mobility Raise"
++    },
++    {
++      "id": "plate-loaded-hip-thrust-machine",
++      "nameFa": "هیپ تراست دستگاه صفحه‌ای",
++      "nameEn": "Plate-Loaded Hip Thrust Machine"
++    },
++    {
++      "id": "medicine-ball-russian-twist",
++      "nameFa": "روسین توئیست با مدیسن‌بال",
++      "nameEn": "Medicine-Ball Russian Twist"
++    },
++    {
++      "id": "double-high-cable-biceps-curl",
++      "nameFa": "جلو بازو فیگوری سیم‌کش دوطرفه",
++      "nameEn": "Double High-Cable Biceps Curl"
++    },
++    {
++      "id": "crossed-cable-lateral-raise",
++      "nameFa": "نشر جانب سیم‌کش ضربدری",
++      "nameEn": "Crossed-Cable Lateral Raise"
++    },
++    {
++      "id": "smith-machine-shrug",
++      "nameFa": "شراگ اسمیت",
++      "nameEn": "Smith Machine Shrug"
++    },
++    {
++      "id": "rope-straight-arm-pulldown",
++      "nameFa": "پول‌اور سیم‌کش با طناب",
++      "nameEn": "Rope Straight-Arm Cable Pulldown"
++    },
++    {
++      "id": "low-to-high-cable-fly",
++      "nameFa": "کراس سیم‌کش از پایین به بالا",
++      "nameEn": "Low-to-High Cable Fly"
++    },
++    {
++      "id": "single-arm-cable-fly",
++      "nameFa": "فلای سینه سیم‌کش تک‌دست",
++      "nameEn": "Single-Arm Cable Fly"
++    },
++    {
++      "id": "single-arm-machine-chest-press",
++      "nameFa": "پرس سینه دستگاه تک‌دست",
++      "nameEn": "Single-Arm Machine Chest Press"
++    },
++    {
++      "id": "iso-lateral-chest-press",
++      "nameFa": "پرس سینه دستگاه ایزولترال",
++      "nameEn": "Iso-Lateral Chest Press"
++    },
++    {
++      "id": "hammer-strength-chest-press",
++      "nameFa": "پرس سینه همر استرنگث",
++      "nameEn": "Hammer Strength Chest Press"
++    },
++    {
++      "id": "smith-decline-press",
++      "nameFa": "پرس زیر سینه اسمیت",
++      "nameEn": "Smith Machine Decline Press"
++    },
++    {
++      "id": "feet-up-bench-press",
++      "nameFa": "پرس سینه هالتر پا بالا",
++      "nameEn": "Feet-Up Barbell Bench Press"
++    },
++    {
++      "id": "dumbbell-floor-press",
++      "nameFa": "پرس سینه دمبل روی زمین",
++      "nameEn": "Dumbbell Floor Press"
++    },
++    {
++      "id": "barbell-floor-press",
++      "nameFa": "پرس سینه هالتر روی زمین",
++      "nameEn": "Barbell Floor Press"
++    },
++    {
++      "id": "weighted-push-up",
++      "nameFa": "شنا سوئدی وزنه‌دار",
++      "nameEn": "Weighted Push-Up"
++    },
++    {
++      "id": "assisted-chest-dip",
++      "nameFa": "دیپ سینه دستگاه کمکی",
++      "nameEn": "Assisted Chest Dip"
++    },
++    {
++      "id": "cable-squeeze-press",
++      "nameFa": "اسکوییز پرس سیم‌کش",
++      "nameEn": "Cable Squeeze Press"
++    },
++    {
++      "id": "plate-squeeze-press",
++      "nameFa": "اسکوییز پرس صفحه",
++      "nameEn": "Plate Squeeze Press"
++    },
++    {
++      "id": "reverse-grip-bench-press",
++      "nameFa": "پرس سینه هالتر مچ برعکس",
++      "nameEn": "Reverse-Grip Bench Press"
++    },
++    {
++      "id": "reverse-grip-incline-press",
++      "nameFa": "پرس بالا سینه هالتر مچ برعکس",
++      "nameEn": "Reverse-Grip Incline Press"
++    },
++    {
++      "id": "underhand-seated-cable-row",
++      "nameFa": "قایقی سیم‌کش مچ برعکس",
++      "nameEn": "Underhand Seated Cable Row"
++    },
++    {
++      "id": "single-arm-seated-cable-row",
++      "nameFa": "قایقی سیم‌کش تک‌دست",
++      "nameEn": "Single-Arm Seated Cable Row"
++    },
++    {
++      "id": "single-arm-machine-row",
++      "nameFa": "زیربغل دستگاه تک‌دست",
++      "nameEn": "Single-Arm Machine Row"
++    },
++    {
++      "id": "iso-lateral-high-row",
++      "nameFa": "زیربغل دستگاه ایزولترال های‌رو",
++      "nameEn": "Iso-Lateral High Row"
++    },
++    {
++      "id": "iso-lateral-low-row",
++      "nameFa": "زیربغل دستگاه ایزولترال لو‌رو",
++      "nameEn": "Iso-Lateral Low Row"
++    },
++    {
++      "id": "meadows-row",
++      "nameFa": "زیربغل میدوز رو",
++      "nameEn": "Meadows Row"
++    },
++    {
++      "id": "dumbbell-seal-row",
++      "nameFa": "سیل‌رو دمبل",
++      "nameEn": "Dumbbell Seal Row"
++    },
++    {
++      "id": "kneeling-straight-arm-pulldown",
++      "nameFa": "پول‌اور سیم‌کش زانو زده",
++      "nameEn": "Kneeling Straight-Arm Pulldown"
++    },
++    {
++      "id": "medium-grip-lat-pulldown",
++      "nameFa": "لت سیم‌کش دست متوسط",
++      "nameEn": "Medium-Grip Lat Pulldown"
++    },
++    {
++      "id": "assisted-pull-up",
++      "nameFa": "بارفیکس دستگاه کمکی",
++      "nameEn": "Assisted Pull-Up"
++    },
++    {
++      "id": "chin-up",
++      "nameFa": "بارفیکس مچ برعکس",
++      "nameEn": "Chin-Up"
++    },
++    {
++      "id": "scapular-pull-up",
++      "nameFa": "بارفیکس کتف",
++      "nameEn": "Scapular Pull-Up"
++    },
++    {
++      "id": "rack-pull",
++      "nameFa": "رک پول هالتر",
++      "nameEn": "Barbell Rack Pull"
++    },
++    {
++      "id": "trap-bar-deadlift",
++      "nameFa": "ددلیفت ترپ‌بار",
++      "nameEn": "Trap-Bar Deadlift"
++    },
++    {
++      "id": "snatch-grip-deadlift",
++      "nameFa": "ددلیفت دست باز",
++      "nameEn": "Snatch-Grip Deadlift"
++    },
++    {
++      "id": "cable-row-to-hip",
++      "nameFa": "قایقی سیم‌کش به سمت لگن",
++      "nameEn": "Cable Row to Hip"
++    },
++    {
++      "id": "face-pull-row",
++      "nameFa": "فیس پول رو",
++      "nameEn": "Face Pull Row"
++    },
++    {
++      "id": "cable-front-raise",
++      "nameFa": "نشر جلو سیم‌کش",
++      "nameEn": "Cable Front Raise"
++    },
++    {
++      "id": "leaning-cable-lateral-raise",
++      "nameFa": "نشر جانب سیم‌کش با تکیه",
++      "nameEn": "Leaning Cable Lateral Raise"
++    },
++    {
++      "id": "lying-cable-lateral-raise",
++      "nameFa": "نشر جانب سیم‌کش خوابیده",
++      "nameEn": "Lying Cable Lateral Raise"
++    },
++    {
++      "id": "incline-bench-lateral-raise",
++      "nameFa": "نشر جانب دمبل روی میز شیب‌دار",
++      "nameEn": "Incline-Bench Dumbbell Lateral Raise"
++    },
++    {
++      "id": "standing-machine-lateral-raise",
++      "nameFa": "نشر جانب دستگاه ایستاده",
++      "nameEn": "Standing Machine Lateral Raise"
++    },
++    {
++      "id": "behind-back-cable-lateral-raise",
++      "nameFa": "نشر جانب سیم‌کش از پشت بدن",
++      "nameEn": "Behind-the-Back Cable Lateral Raise"
++    },
++    {
++      "id": "cable-y-raise",
++      "nameFa": "نشر Y سیم‌کش",
++      "nameEn": "Cable Y Raise"
++    },
++    {
++      "id": "dumbbell-y-raise",
++      "nameFa": "نشر Y دمبل",
++      "nameEn": "Dumbbell Y Raise"
++    },
++    {
++      "id": "high-incline-dumbbell-press",
++      "nameFa": "پرس دمبل شیب زیاد",
++      "nameEn": "High-Incline Dumbbell Press"
++    },
++    {
++      "id": "neutral-grip-machine-shoulder-press",
++      "nameFa": "پرس سرشانه دستگاه دست موازی",
++      "nameEn": "Neutral-Grip Machine Shoulder Press"
++    },
++    {
++      "id": "single-arm-machine-shoulder-press",
++      "nameFa": "پرس سرشانه دستگاه تک‌دست",
++      "nameEn": "Single-Arm Machine Shoulder Press"
++    },
++    {
++      "id": "standing-landmine-press",
++      "nameFa": "پرس لندماین تک‌دست ایستاده",
++      "nameEn": "Standing Single-Arm Landmine Press"
++    },
++    {
++      "id": "cable-shrug",
++      "nameFa": "شراگ سیم‌کش",
++      "nameEn": "Cable Shrug"
++    },
++    {
++      "id": "ez-bar-preacher-curl",
++      "nameFa": "جلو بازو لاری هالتر EZ دست جمع",
++      "nameEn": "EZ-Bar Preacher Curl"
++    },
++    {
++      "id": "cable-preacher-curl",
++      "nameFa": "جلو بازو لاری سیم‌کش",
++      "nameEn": "Cable Preacher Curl"
++    },
++    {
++      "id": "cable-concentration-curl",
++      "nameFa": "جلو بازو تمرکزی سیم‌کش",
++      "nameEn": "Cable Concentration Curl"
++    },
++    {
++      "id": "rope-hammer-curl",
++      "nameFa": "جلو بازو چکشی طناب سیم‌کش",
++      "nameEn": "Rope Hammer Curl"
++    },
++    {
++      "id": "cable-hammer-curl",
++      "nameFa": "جلو بازو چکشی سیم‌کش",
++      "nameEn": "Cable Hammer Curl"
++    },
++    {
++      "id": "zottman-curl",
++      "nameFa": "جلو بازو زاتمن دمبل",
++      "nameEn": "Zottman Curl"
++    },
++    {
++      "id": "incline-alternating-dumbbell-curl",
++      "nameFa": "جلو بازو دمبل تناوبی روی میز شیب‌دار",
++      "nameEn": "Incline Alternating Dumbbell Curl"
++    },
++    {
++      "id": "dumbbell-drag-curl",
++      "nameFa": "جلو بازو درگ کرل دمبل",
++      "nameEn": "Dumbbell Drag Curl"
++    },
++    {
++      "id": "reverse-cable-curl",
++      "nameFa": "جلو بازو سیم‌کش مچ برعکس",
++      "nameEn": "Reverse Cable Curl"
++    },
++    {
++      "id": "reverse-dumbbell-curl",
++      "nameFa": "جلو بازو دمبل مچ برعکس",
++      "nameEn": "Reverse Dumbbell Curl"
++    },
++    {
++      "id": "barbell-wrist-curl",
++      "nameFa": "ساعد هالتر کف دست بالا",
++      "nameEn": "Barbell Wrist Curl"
++    },
++    {
++      "id": "cable-wrist-curl",
++      "nameFa": "ساعد سیم‌کش کف دست بالا",
++      "nameEn": "Cable Wrist Curl"
++    },
++    {
++      "id": "standing-wrist-curl-machine",
++      "nameFa": "ساعد دستگاه ایستاده",
++      "nameEn": "Standing Wrist Curl Machine"
++    },
++    {
++      "id": "preacher-wrist-curl-palms-up",
++      "nameFa": "میز ساعد کف دست بالا",
++      "nameEn": "Preacher-Bench Wrist Curl Palms Up"
++    },
++    {
++      "id": "single-arm-rope-triceps-pushdown",
++      "nameFa": "پشت بازو طناب تک‌دست",
++      "nameEn": "Single-Arm Rope Triceps Pushdown"
++    },
++    {
++      "id": "v-bar-triceps-pushdown",
++      "nameFa": "پشت بازو سیم‌کش میله V",
++      "nameEn": "V-Bar Triceps Pushdown"
++    },
++    {
++      "id": "ez-bar-triceps-pushdown",
++      "nameFa": "پشت بازو سیم‌کش میله EZ",
++      "nameEn": "EZ-Bar Cable Triceps Pushdown"
++    },
++    {
++      "id": "crossbody-cable-triceps-extension",
++      "nameFa": "پشت بازو سیم‌کش کراس‌بادی",
++      "nameEn": "Cross-Body Cable Triceps Extension"
++    },
++    {
++      "id": "rolling-dumbbell-triceps-extension",
++      "nameFa": "پشت بازو رولینگ دمبل",
++      "nameEn": "Rolling Dumbbell Triceps Extension"
++    },
++    {
++      "id": "jm-press",
++      "nameFa": "پرس JM هالتر",
++      "nameEn": "JM Press"
++    },
++    {
++      "id": "safety-bar-squat",
++      "nameFa": "اسکوات سیفتی‌بار",
++      "nameEn": "Safety-Bar Squat"
++    },
++    {
++      "id": "zercher-squat",
++      "nameFa": "زرچر اسکوات",
++      "nameEn": "Zercher Squat"
++    },
++    {
++      "id": "heel-elevated-goblet-squat",
++      "nameFa": "گابلت اسکوات پاشنه بالا",
++      "nameEn": "Heel-Elevated Goblet Squat"
++    },
++    {
++      "id": "cyclist-squat",
++      "nameFa": "سایکلست اسکوات",
++      "nameEn": "Cyclist Squat"
++    },
++    {
++      "id": "sissy-squat",
++      "nameFa": "سیسی اسکوات",
++      "nameEn": "Sissy Squat"
++    },
++    {
++      "id": "reverse-hack-squat",
++      "nameFa": "هاک اسکوات معکوس",
++      "nameEn": "Reverse Hack Squat"
++    },
++    {
++      "id": "hack-squat-high-feet",
++      "nameFa": "هاک اسکوات جای پا بالا",
++      "nameEn": "Hack Squat High Foot Placement"
++    },
++    {
++      "id": "hack-squat-low-feet",
++      "nameFa": "هاک اسکوات جای پا پایین",
++      "nameEn": "Hack Squat Low Foot Placement"
++    },
++    {
++      "id": "horizontal-leg-press",
++      "nameFa": "پرس پا افقی دستگاه",
++      "nameEn": "Horizontal Leg Press"
++    },
++    {
++      "id": "seated-leg-press-machine",
++      "nameFa": "پرس پا نشسته دستگاه",
++      "nameEn": "Seated Leg Press Machine"
++    },
++    {
++      "id": "vertical-leg-press",
++      "nameFa": "پرس پا عمودی",
++      "nameEn": "Vertical Leg Press"
++    },
++    {
++      "id": "cable-belt-squat",
++      "nameFa": "بلت اسکوات سیم‌کش",
++      "nameEn": "Cable Belt Squat"
++    },
++    {
++      "id": "dumbbell-split-squat",
++      "nameFa": "اسپلیت اسکوات دمبل",
++      "nameEn": "Dumbbell Split Squat"
++    },
++    {
++      "id": "front-foot-elevated-split-squat",
++      "nameFa": "اسپلیت اسکوات پای جلو بالا",
++      "nameEn": "Front-Foot-Elevated Split Squat"
++    },
++    {
++      "id": "dumbbell-walking-lunge",
++      "nameFa": "لانج راه‌رفتنی دمبل",
++      "nameEn": "Dumbbell Walking Lunge"
++    },
++    {
++      "id": "barbell-walking-lunge",
++      "nameFa": "لانج راه‌رفتنی هالتر",
++      "nameEn": "Barbell Walking Lunge"
++    },
++    {
++      "id": "dumbbell-curtsy-lunge",
++      "nameFa": "لانج کرتسی دمبل",
++      "nameEn": "Dumbbell Curtsy Lunge"
++    },
++    {
++      "id": "single-leg-lying-leg-curl",
++      "nameFa": "پشت پا خوابیده تک‌پا دستگاه",
++      "nameEn": "Single-Leg Lying Leg Curl"
++    },
++    {
++      "id": "cable-leg-curl",
++      "nameFa": "پشت پا سیم‌کش",
++      "nameEn": "Cable Leg Curl"
++    }
++  ]
++}
+diff --git a/docs/video-mapping-review-20261123.json b/docs/video-mapping-review-20261123.json
+new file mode 100644
+index 0000000..c097cef
+--- /dev/null
++++ b/docs/video-mapping-review-20261123.json
+@@ -0,0 +1,25 @@
++{
++  "method": "Manual review of frames at0.3,1.3,2.3seconds from existing male MP4s; no female or unrelated-equipment fallback.",
++  "newMappings": {
++    "cable-crossover": "1269",
++    "high-to-low-cable-fly": "1269",
++    "wide-grip-lat-pulldown": "drv-cable-bar-lateral-pulldown-wide-shoulder-grip",
++    "overhead-dumbbell-triceps-extension": "2188",
++    "chest-supported-dumbbell-row": "0327",
++    "seated-dumbbell-wrist-curl": "0369",
++    "machine-preacher-curl": "0592",
++    "seated-single-arm-overhead-dumbbell-triceps-extension": "0306",
++    "hanging-knee-raise": "1764",
++    "high-to-low-cable-wood-chop": "0862",
++    "barbell-upright-row": "0123",
++    "cable-pullover": "0238",
++    "single-arm-lat-pulldown": "2616",
++    "seated-bench-single-arm-cable-lat-pulldown": "2616",
++    "bent-over-cable-reverse-fly": "0154"
++  },
++  "excludedExamples": {
++    "horizontal-leg-press": "Source2611demonstrates single-leg; not assigned to bilateral movement.",
++    "standing-cable-rear-delt-fly": "Source0154is bent-over; only assigned to bent-over variant.",
++    "seated-single-arm-dumbbell-front-raise": "Source0392is bilateral; not assigned to single-arm variant."
++  }
++}
+diff --git a/lib/exercise-videos.ts b/lib/exercise-videos.ts
+index c20a496..1302210 100644
+--- a/lib/exercise-videos.ts
++++ b/lib/exercise-videos.ts
+@@ -1,3 +1,3 @@
+ export const MALE_VIDEO_CATALOG={"0489": {"id": "0489", "name": "45 Degree Hyperextension", "file": "45-degree-hyperextension.mp4"}, "drv-45-degree-bycicle-twisting-crunch": {"id": "drv-45-degree-bycicle-twisting-crunch", "name": "45-Degree Bicycle Twisting Crunch", "file": "45-degree-bycicle-twisting-crunch.mp4"}, "drv-45-degree-bycicle-twisting-crunch-1": {"id": "drv-45-degree-bycicle-twisting-crunch-1", "name": "45-Degree Bicycle Twisting Crunch", "file": "45-degree-bycicle-twisting-crunch-1.mp4"}, "drv-stretching-all-fours-squad-stretch": {"id": "drv-stretching-all-fours-squad-stretch", "name": "All Fours Groin Stretch", "file": "stretching-all-fours-squad-stretch.mp4"}, "0970": {"id": "0970", "name": "Band Assisted Pull-up", "file": "band-assisted-pull-up.mp4"}, "drv-band-bent-over-rear-lateral-raise": {"id": "drv-band-bent-over-rear-lateral-raise", "name": "Band Bent-Over Rear Lateral Raise", "file": "band-bent-over-rear-lateral-raise.mp4"}, "3006": {"id": "3006", "name": "Band Hip Abduction", "file": "band-hip-abduction.mp4"}, "drv-band-hip-adduction": {"id": "drv-band-hip-adduction", "name": "Band Hip Adduction", "file": "band-hip-adduction.mp4"}, "0983": {"id": "0983", "name": "Band Kneeling One Arm Pulldown", "file": "band-kneeling-one-arm-pulldown.mp4"}, "1017": {"id": "1017", "name": "Band One Arm Front Raise", "file": "band-one-arm-forward-raise.mp4"}, "drv-band-one-leg-kickback-bent-position": {"id": "drv-band-one-leg-kickback-bent-position", "name": "Band One-Leg Kickback (Bent Position)", "file": "band-one-leg-kickback-bent-position.mp4"}, "new-band-overhead-triceps-extension": {"id": "new-band-overhead-triceps-extension", "name": "Band Overhead Triceps Extension", "file": "band-overhead-triceps-extension.mp4"}, "0976": {"id": "0976", "name": "Band Prone Leg Curl", "file": "band-leg-curl.mp4"}, "0991": {"id": "0991", "name": "Band Pull Through", "file": "band-pull-through.mp4"}, "drv-band-decline-sit-ups": {"id": "drv-band-decline-sit-ups", "name": "Band Resisted Decline Sit-Up", "file": "band-decline-sit-ups.mp4"}, "0980": {"id": "0980", "name": "Band Seated Leg Extension", "file": "band-seated-leg-extension.mp4"}, "0990": {"id": "0990", "name": "Band Seated Row", "file": "band-seated-row.mp4"}, "drv-stretching-band-warm-up-shoulder-stretch": {"id": "drv-stretching-band-warm-up-shoulder-stretch", "name": "Band Shoulder Warm-Up Stretch", "file": "stretching-band-warm-up-shoulder-stretch.mp4"}, "0002": {"id": "0002", "name": "Band Side Bend", "file": "band-side-bend.mp4"}, "0999": {"id": "0999", "name": "Band Standing Calf Raise", "file": "band-standing-calf-raise.mp4"}, "1005": {"id": "1005", "name": "Band Standing Crunch", "file": "band-standing-crunch.mp4"}, "0988": {"id": "0988", "name": "Band Standing Leg Curl", "file": "band-standing-leg-curl.mp4"}, "1408": {"id": "1408", "name": "Band Standing Lift", "file": "band-standing-lift.mp4"}, "1022": {"id": "1022", "name": "Band Standing Rear Delt Row", "file": "band-standing-rear-delt-row.mp4"}, "3144": {"id": "3144", "name": "Band Straight-Back Seated Row", "file": "band-straight-back-seated-row.mp4"}, "new-band-triceps-pushdown": {"id": "new-band-triceps-pushdown", "name": "Band Triceps Pushdown", "file": "band-triceps-pushdown.mp4"}, "1435": {"id": "1435", "name": "Barbell Back Squat", "file": "classic-barbell-squat.mp4"}, "0025": {"id": "0025", "name": "Barbell Bench Press", "file": "barbell-bench-press.mp4"}, "0028": {"id": "0028", "name": "Barbell Clean And Press", "file": "barbell-clean-and-press.mp4"}, "0030": {"id": "0030", "name": "Barbell Close Grip Bench Press", "file": "barbell-close-grip-bench-press.mp4"}, "0031": {"id": "0031", "name": "Barbell Curl", "file": "barbell-curl.mp4"}, "0033": {"id": "0033", "name": "Barbell Decline Bench Press", "file": "barbell-decline-bench-press.mp4"}, "0038": {"id": "0038", "name": "Barbell Drag Curl", "file": "barbell-drag-curl.mp4"}, "0041": {"id": "0041", "name": "Barbell Front Raise", "file": "barbell-front-raise.mp4"}, "0042": {"id": "0042", "name": "Barbell Front Squat", "file": "barbell-front-chest-squat.mp4"}, "0047": {"id": "0047", "name": "Barbell Incline Bench Press", "file": "barbell-incline-bench-press.mp4"}, "0054": {"id": "0054", "name": "Barbell Lunge", "file": "barbell-lunge.mp4"}, "0072": {"id": "0072", "name": "Barbell Prone Incline Curl", "file": "barbell-prone-incline-curl.mp4"}, "0075": {"id": "0075", "name": "Barbell Rear Delt Raise", "file": "barbell-rear-delt-raise.mp4"}, "0082": {"id": "0082", "name": "Barbell Reverse Wrist Curl", "file": "barbell-reverse-wrist-curl-over-grip.mp4"}, "drv-barbell-seated-behind-head-military-press": {"id": "drv-barbell-seated-behind-head-military-press", "name": "Barbell Seated Behind-The-Neck Press", "file": "barbell-seated-behind-head-military-press.mp4"}, "0095": {"id": "0095", "name": "Barbell Shrug", "file": "barbell-shrug.mp4"}, "0104": {"id": "0104", "name": "Barbell Standing Back Wrist Curl", "file": "barbell-standing-back-wrist-curl.mp4"}, "0116": {"id": "0116", "name": "Barbell Straight Leg Deadlift", "file": "barbell-straight-leg-deadlift.mp4"}, "0027": {"id": "0027", "name": "Barbell Underhand Bent-Over Row", "file": "barbell-underhand-bent-over-row.mp4"}, "0123": {"id": "0123", "name": "Barbell Wide-Grip Upright Row", "file": "barbell-upright-row-wide-grip.mp4"}, "0128": {"id": "0128", "name": "Battling Ropes", "file": "battling-ropes.mp4"}, "drv-crunch-on-bench": {"id": "drv-crunch-on-bench", "name": "Bench Crunch", "file": "crunch-on-bench.mp4"}, "drv-bench-dips": {"id": "drv-bench-dips", "name": "Bench Dips", "file": "bench-dips.mp4"}, "0570": {"id": "0570", "name": "Bench Pull-Up", "file": "bench-pull-ups.mp4"}, "drv-stretching-bridge-pose-setu-bandhasana": {"id": "drv-stretching-bridge-pose-setu-bandhasana", "name": "Bridge Pose (Setu Bandhasana)", "file": "stretching-bridge-pose-setu-bandhasana.mp4"}, "drv-stretching-bridge-pose-setu-bandhasana-1": {"id": "drv-stretching-bridge-pose-setu-bandhasana-1", "name": "Bridge Pose (Setu Bandhasana)", "file": "stretching-bridge-pose-setu-bandhasana-1.mp4"}, "1160": {"id": "1160", "name": "Burpee", "file": "burpee.mp4"}, "1494": {"id": "1494", "name": "Butterfly Yoga Pose", "file": "stretching-butterfly-yoga-pose.mp4"}, "0974": {"id": "0974", "name": "Cable Close Grip Lat Pulldown", "file": "cable-close-grip-front-lat-pulldown.mp4"}, "0154": {"id": "0154", "name": "Cable Crossover Reverse Fly", "file": "cable-crossover-reverse-fly.mp4"}, "0175": {"id": "0175", "name": "Cable Kneeling Crunch", "file": "cable-kneeling-crunch.mp4"}, "0178": {"id": "0178", "name": "Cable Lateral Raise", "file": "cable-lateral-raise.mp4"}, "0186": {"id": "0186", "name": "Cable Lying Triceps Extension", "file": "cable-lying-triceps-extension.mp4"}, "0190": {"id": "0190", "name": "Cable One Arm Curl", "file": "cable-one-arm-curl.mp4"}, "0162": {"id": "0162", "name": "Cable One Arm Front Raise", "file": "cable-one-arm-forward-raise.mp4"}, "2616": {"id": "2616", "name": "Cable One Arm Lateral Pulldown", "file": "cable-one-arm-lateral-pulldown.mp4"}, "0192": {"id": "0192", "name": "Cable One Arm Lateral Raise", "file": "cable-one-arm-lateral-raise.mp4"}, "0861": {"id": "0861", "name": "Cable One-Arm Twisting Seated Row", "file": "cable-one-arm-twisting-seated-row.mp4"}, "0198": {"id": "0198", "name": "Cable Pulldown", "file": "cable-pulldown.mp4"}, "0203": {"id": "0203", "name": "Cable Rear Delt Row (with rope)", "file": "cable-rear-delt-row-with-rope.mp4"}, "0194": {"id": "0194", "name": "Cable Rope Overhead Triceps Extension", "file": "cable-rope-high-pulley-overhead-triceps-extension.mp4"}, "0200": {"id": "0200", "name": "Cable Rope Triceps Pushdown", "file": "cable-pushdown-rope-attachment.mp4"}, "0213": {"id": "0213", "name": "Cable Seated High Row (V-bar)", "file": "cable-seated-high-row-v-bar.mp4"}, "0226": {"id": "0226", "name": "Cable Standing Crunch", "file": "cable-standing-crunch.mp4"}, "1269": {"id": "1269", "name": "Cable Standing Fly", "file": "cable-standing-fly-crossover-fly.mp4"}, "0229": {"id": "0229", "name": "Cable Standing Inner Curl", "file": "cable-standing-inner-curl.mp4"}, "0230": {"id": "0230", "name": "Cable Standing Lift", "file": "cable-standing-lift.mp4"}, "0231": {"id": "0231", "name": "Cable Standing One Arm Triceps Extension", "file": "cable-standing-one-arm-triceps-extension.mp4"}, "0238": {"id": "0238", "name": "Cable Straight Arm Pulldown", "file": "cable-straight-arm-pulldown.mp4"}, "1723": {"id": "1723", "name": "Cable Triceps Pushdown", "file": "cable-triceps-pushdown.mp4"}, "0862": {"id": "0862", "name": "Cable Twist (up-down)", "file": "cable-twist-up-down.mp4"}, "1378": {"id": "1378", "name": "Calf Stretch with Rope", "file": "stretching-calf-stretch-with-rope.mp4"}, "1599": {"id": "1599", "name": "Calf Stretch with Strap", "file": "stretching-calf-stretch-with-strap.mp4"}, "0248": {"id": "0248", "name": "Cambered Bar Lying Row", "file": "cambered-bar-lying-row.mp4"}, "drv-cardio-exercises": {"id": "drv-cardio-exercises", "name": "Cardio Exercise", "file": "cardio-exercises.mp4"}, "drv-cardio-exercises-machines": {"id": "drv-cardio-exercises-machines", "name": "Cardio Machine Workouts", "file": "cardio-exercises-machines.mp4"}, "drv-chest-dips": {"id": "drv-chest-dips", "name": "Chest Dips", "file": "chest-dips.mp4"}, "drv-stretching-chin-to-chest-stretch": {"id": "drv-stretching-chin-to-chest-stretch", "name": "Chin-to-Chest Stretch", "file": "stretching-chin-to-chest-stretch.mp4"}, "0253": {"id": "0253", "name": "Chin-ups (narrow parallel grip)", "file": "chin-ups-narrow-parallel-grip.mp4"}, "drv-close-feet-leg-press": {"id": "drv-close-feet-leg-press", "name": "Close Feet Leg Press", "file": "close-feet-leg-press.mp4"}, "2987": {"id": "2987", "name": "Close Grip Chin-Up", "file": "close-grip-chin-up.mp4"}, "0259": {"id": "0259", "name": "Close-Grip Push-Up", "file": "close-grip-push-ups.mp4"}, "drv-commando-pull-up": {"id": "drv-commando-pull-up", "name": "Commando Pull-Up", "file": "commando-pull-up.mp4"}, "drv-stretching-crossover-kneeling-hip-flexor-stretch": {"id": "drv-stretching-crossover-kneeling-hip-flexor-stretch", "name": "Crossover Kneeling Hip Flexor Stretch", "file": "stretching-crossover-kneeling-hip-flexor-stretch.mp4"}, "0301": {"id": "0301", "name": "Decline Dumbbell Bench Press", "file": "decline-dumbbell-bench-press-45-degree.mp4"}, "0302": {"id": "0302", "name": "Decline Dumbbell Fly", "file": "dumbbell-decline-fly-45-degree-1.mp4"}, "1274": {"id": "1274", "name": "Deep Push-Up", "file": "deep-push-ups.mp4"}, "0284": {"id": "0284", "name": "Donkey Calf Raise", "file": "donkey-calf-raise.mp4"}, "0361": {"id": "0361", "name": "Dumbbell Alternating Shoulder Press", "file": "dumbbell-alternate-shoulder-press.mp4"}, "2137": {"id": "2137", "name": "Dumbbell Arnold Press", "file": "dumbbell-arnold-press.mp4"}, "0364": {"id": "0364", "name": "Dumbbell Behind-the-Back Wrist Curl", "file": "dumbbell-behind-back-wrist-curl.mp4"}, "0293": {"id": "0293", "name": "Dumbbell Bent-Over Row", "file": "dumbbell-bent-over-row.mp4"}, "0294": {"id": "0294", "name": "Dumbbell Biceps Curl", "file": "dumbbell-biceps-curl.mp4"}, "0296": {"id": "0296", "name": "Dumbbell Close-Grip Press", "file": "dumbbell-close-grip-press.mp4"}, "0297": {"id": "0297", "name": "Dumbbell Concentration Curl", "file": "dumbbell-concentration-curl.mp4"}, "0298": {"id": "0298", "name": "Dumbbell Cross Body Hammer Curl", "file": "dumbbell-cross-body-hammer-curl.mp4"}, "0300": {"id": "0300", "name": "Dumbbell Deadlift", "file": "dumbbell-deadlift.mp4"}, "0308": {"id": "0308", "name": "Dumbbell Fly", "file": "dumbbell-fly.mp4"}, "1277": {"id": "1277", "name": "Dumbbell Fly On Exercise Ball", "file": "dumbbell-fly-on-exercise-ball.mp4"}, "0310": {"id": "0310", "name": "Dumbbell Front Raise", "file": "dumbbell-front-raise.mp4"}, "1760": {"id": "1760", "name": "Dumbbell Goblet Squat", "file": "dumbbell-goblet-squat.mp4"}, "1330": {"id": "1330", "name": "Dumbbell Hammer Grip Incline Bench Row", "file": "dumbbell-hammer-grip-incline-bench-row.mp4"}, "0314": {"id": "0314", "name": "Dumbbell Incline Bench Press", "file": "dumbbell-incline-bench-press.mp4"}, "0322": {"id": "0322", "name": "Dumbbell Incline Biceps Curl", "file": "dumbbell-incline-biceps-curl.mp4"}, "0318": {"id": "0318", "name": "Dumbbell Incline Curl", "file": "dumbbell-incline-curl.mp4"}, "0319": {"id": "0319", "name": "Dumbbell Incline Fly", "file": "dumbbell-incline-fly.mp4"}, "1278": {"id": "1278", "name": "Dumbbell Incline Fly On Exercise Ball", "file": "dumbbell-incline-fly-on-exercise-ball.mp4"}, "0320": {"id": "0320", "name": "Dumbbell Incline Hammer Curl", "file": "dumbbell-incline-hammer-curl.mp4"}, "0321": {"id": "0321", "name": "Dumbbell Incline Hammer Press", "file": "dumbbell-incline-hammer-press.mp4"}, "0326": {"id": "0326", "name": "Dumbbell Incline Rear Lateral Raise", "file": "dumbbell-incline-rear-lateral-raise.mp4"}, "0327": {"id": "0327", "name": "Dumbbell Incline Row", "file": "dumbbell-incline-row.mp4"}, "0329": {"id": "0329", "name": "Dumbbell Incline Shrug", "file": "dumbbell-incline-shrug.mp4"}, "0330": {"id": "0330", "name": "Dumbbell Incline Triceps Extension", "file": "dumbbell-incline-triceps-extension.mp4"}, "0332": {"id": "0332", "name": "Dumbbell Iron Cross", "file": "dumbbell-iron-cross.mp4"}, "0333": {"id": "0333", "name": "Dumbbell Kickback", "file": "dumbbell-kickback.mp4"}, "0334": {"id": "0334", "name": "Dumbbell Lateral Raise", "file": "dumbbell-lateral-raise.mp4"}, "0336": {"id": "0336", "name": "Dumbbell Lunge", "file": "dumbbell-lunge.mp4"}, "1729": {"id": "1729", "name": "Dumbbell Lying Alternate Extension", "file": "dumbbell-lying-alternate-extension.mp4"}, "0340": {"id": "0340", "name": "Dumbbell Lying Hammer Press", "file": "dumbbell-lying-hammer-press.mp4"}, "0343": {"id": "0343", "name": "Dumbbell Lying Leg Curl", "file": "dumbbell-lying-femoral.mp4"}, "1328": {"id": "1328", "name": "Dumbbell Lying Rear Delt Row", "file": "dumbbell-lying-rear-delt-row.mp4"}, "0351": {"id": "0351", "name": "Dumbbell Lying Triceps Extension", "file": "dumbbell-lying-triceps-extension.mp4"}, "0355": {"id": "0355", "name": "Dumbbell One Arm Lateral Raise", "file": "dumbbell-one-arm-lateral-raise.mp4"}, "1672": {"id": "1672", "name": "Dumbbell One Arm Zottman Preacher Curl", "file": "dumbbell-one-arm-zottman-preacher-curl.mp4"}, "0306": {"id": "0306", "name": "Dumbbell One-Arm Triceps Extension", "file": "dumbbell-one-arm-triceps-extension.mp4"}, "0369": {"id": "0369", "name": "Dumbbell Over Bench Wrist Curl", "file": "dumbbell-over-bench-wrist-curl.mp4"}, "1329": {"id": "1329", "name": "Dumbbell Palm Rotational Bent Over Row", "file": "dumbbell-palm-rotational-bent-over-row.mp4"}, "1673": {"id": "1673", "name": "Dumbbell Preacher Curl Over Exercise Ball", "file": "dumbbell-preacher-curl-over-exercise-ball.mp4"}, "0373": {"id": "0373", "name": "Dumbbell Pronate-grip Triceps Extension", "file": "dumbbell-pronate-grip-triceps-extension.mp4"}, "0374": {"id": "0374", "name": "Dumbbell Prone Incline Curl", "file": "dumbbell-prone-incline-curl.mp4"}, "0377": {"id": "0377", "name": "Dumbbell Rear Delt Row", "file": "dumbbell-rear-delt-row.mp4"}, "1379": {"id": "1379", "name": "Dumbbell Seated Calf Raise", "file": "dumbbell-seated-calf-raise.mp4"}, "0392": {"id": "0392", "name": "Dumbbell Seated Front Raise", "file": "dumbbell-seated-front-raise.mp4"}, "0394": {"id": "0394", "name": "Dumbbell Seated Kickback", "file": "dumbbell-seated-kickback.mp4"}, "0396": {"id": "0396", "name": "Dumbbell Seated Lateral Raise", "file": "dumbbell-seated-lateral-raise.mp4"}, "0397": {"id": "0397", "name": "Dumbbell Seated Neutral Wrist Curl", "file": "dumbbell-seated-neutral-wrist-curl.mp4"}, "0402": {"id": "0402", "name": "Dumbbell Seated Preacher Curl", "file": "dumbbell-seated-preacher-curl.mp4"}, "2188": {"id": "2188", "name": "Dumbbell Seated Triceps Extension", "file": "dumbbell-seated-triceps-extension.mp4"}, "0406": {"id": "0406", "name": "Dumbbell Shrug", "file": "dumbbell-shrug.mp4"}, "0407": {"id": "0407", "name": "Dumbbell Side Bend", "file": "dumbbell-side-bend.mp4"}, "0409": {"id": "0409", "name": "Dumbbell Single Leg Calf Raise", "file": "dumbbell-single-leg-calf-raise.mp4"}, "0411": {"id": "0411", "name": "Dumbbell Single Leg Squat", "file": "dumbbell-single-leg-squat.mp4"}, "0413": {"id": "0413", "name": "Dumbbell Squat", "file": "dumbbell-squat.mp4"}, "0417": {"id": "0417", "name": "Dumbbell Standing Calf Raise", "file": "dumbbell-standing-calf-raise.mp4"}, "0432": {"id": "0432", "name": "Dumbbell Stiff Leg Deadlift", "file": "dumbbell-stiff-leg-deadlift.mp4"}, "new-dumbbell-sumo-squat": {"id": "new-dumbbell-sumo-squat", "name": "Dumbbell Sumo Squat", "file": "dumbbell-bar-grip-sumo-squat.mp4"}, "0437": {"id": "0437", "name": "Dumbbell Upright Row", "file": "dumbbell-upright-row.mp4"}, "1167": {"id": "1167", "name": "Dynamic Chest Stretch", "file": "stretching-dynamic-chest-stretch.mp4"}, "2141": {"id": "2141", "name": "Elliptical Trainer", "file": "elliptical.mp4"}, "1338": {"id": "1338", "name": "Exercise Ball Sit-Up", "file": "sit-up-on-exercise-ball.mp4"}, "1339": {"id": "1339", "name": "Exercise Ball Spinal Stretch", "file": "stretching-spinal-stretch-on-exercise-ball.mp4"}, "2407": {"id": "2407", "name": "EZ Bar Biceps Curl", "file": "ez-barbell-biceps-curl.mp4"}, "0061": {"id": "0061", "name": "EZ Bar Lying Triceps Extension", "file": "ez-barbell-lying-triceps-extension.mp4"}, "0445": {"id": "0445", "name": "EZ Barbell Anti Gravity Press", "file": "ez-barbell-anti-gravity-press.mp4"}, "drv-stretching-feet-and-ankles-rotation-stretch": {"id": "drv-stretching-feet-and-ankles-rotation-stretch", "name": "Feet and Ankles Rotation Stretch", "file": "stretching-feet-and-ankles-rotation-stretch.mp4"}, "drv-stretching-feet-and-ankles-stretch": {"id": "drv-stretching-feet-and-ankles-stretch", "name": "Feet and Ankles Stretch", "file": "stretching-feet-and-ankles-stretch.mp4"}, "0620": {"id": "0620", "name": "Flat Bench Cable Fly", "file": "cable-lying-fly-flat-bench-cable-fly.mp4"}, "drv-stretching-flexion-leg-sit-up": {"id": "drv-stretching-flexion-leg-sit-up", "name": "Flexion Leg Sit-Up Stretch", "file": "stretching-flexion-leg-sit-up.mp4"}, "drv-stretching-front-toe-touch": {"id": "drv-stretching-front-toe-touch", "name": "Front Toe Touch Stretch", "file": "stretching-front-toe-touch.mp4"}, "1764": {"id": "1764", "name": "Hanging Leg Hip Raise", "file": "hanging-leg-hip-raise.mp4"}, "0474": {"id": "0474", "name": "Hanging Straight Leg Raise", "file": "hanging-straight-leg-raise.mp4"}, "0257": {"id": "0257", "name": "Hip Circles Stretch", "file": "stretching-hip-circles-stretch.mp4"}, "drv-stretching-hip-extension-stretch": {"id": "drv-stretching-hip-extension-stretch", "name": "Hip Extension Stretch", "file": "stretching-hip-extension-stretch.mp4"}, "1564": {"id": "1564", "name": "Hip Flexor and Quadriceps Stretch", "file": "stretching-hip-flexor-and-quad-stretch.mp4"}, "0325": {"id": "0325", "name": "Incline Leg Hip Raise", "file": "incline-leg-hip-raise.mp4"}, "0493": {"id": "0493", "name": "Incline Push-Up", "file": "incline-push-ups.mp4"}, "0499": {"id": "0499", "name": "Inverted Row Between Chairs", "file": "inverted-row-between-chairs.mp4"}, "0498": {"id": "0498", "name": "Inverted Row With Straps", "file": "inverted-row-with-straps.mp4"}, "1419": {"id": "1419", "name": "Iron Cross Stretch", "file": "stretching-iron-cross-stretch.mp4"}, "2612": {"id": "2612", "name": "Jump Rope", "file": "jump-rope.mp4"}, "drv-jump-step-up": {"id": "drv-jump-step-up", "name": "Jump Step-Up", "file": "jump-step-up.mp4"}, "new-low-impact-jumping-jack": {"id": "new-low-impact-jumping-jack", "name": "Jumping Jack", "file": "jumping-jack.mp4"}, "drv-kettlebell-deadlift": {"id": "drv-kettlebell-deadlift", "name": "Kettlebell Deadlift", "file": "kettlebell-deadlift.mp4"}, "drv-stretching-kneeling-back-rotation-stretch": {"id": "drv-stretching-kneeling-back-rotation-stretch", "name": "Kneeling Back Rotation Stretch", "file": "stretching-kneeling-back-rotation-stretch.mp4"}, "1346": {"id": "1346", "name": "Kneeling Lat Stretch", "file": "stretching-kneeling-lat-stretch.mp4"}, "1771": {"id": "1771", "name": "Kneeling Triceps Stretch", "file": "stretching-kneeling-triceps-extension.mp4"}, "0562": {"id": "0562", "name": "Landmine 180", "file": "landmine-180.mp4"}, "0573": {"id": "0573", "name": "Lever Back Extension", "file": "lever-back-extension.mp4"}, "0581": {"id": "0581", "name": "Lever High Row", "file": "lever-high-row.mp4"}, "2611": {"id": "2611", "name": "Lever Horizontal Leg Press", "file": "lever-horizontal-leg-press.mp4"}, "1299": {"id": "1299", "name": "Lever Incline Hammer Chest Press", "file": "lever-incline-hammer-chest-press.mp4"}, "0582": {"id": "0582", "name": "Lever Kneeling Leg Curl", "file": "lever-kneeling-leg-curl.mp4"}, "0584": {"id": "0584", "name": "Lever Lateral Raise", "file": "lever-lateral-raise.mp4"}, "0585": {"id": "0585", "name": "Lever Leg Extension", "file": "lever-leg-extension.mp4"}, "0577": {"id": "0577", "name": "Lever Lying Chest Press", "file": "lever-lying-chest-press.mp4"}, "0586": {"id": "0586", "name": "Lever Lying Leg Curl", "file": "lever-lying-leg-curl.mp4"}, "0592": {"id": "0592", "name": "Lever Preacher Curl", "file": "lever-preacher-curl.mp4"}, "0593": {"id": "0593", "name": "Lever Reverse Hyperextension", "file": "lever-reverse-hyperextension.mp4"}, "1349": {"id": "1349", "name": "Lever Reverse T-Bar Row", "file": "lever-reverse-t-bar-row.mp4"}, "0594": {"id": "0594", "name": "Lever Seated Calf Raise", "file": "lever-seated-calf-raise.mp4"}, "1452": {"id": "1452", "name": "Lever Seated Crunch", "file": "lever-seated-crunch-1.mp4"}, "1451": {"id": "1451", "name": "Lever Seated Dip", "file": "lever-seated-dips.mp4"}, "0597": {"id": "0597", "name": "Lever Seated Hip Abduction", "file": "lever-seated-hip-abduction.mp4"}, "0598": {"id": "0598", "name": "Lever Seated Hip Adduction", "file": "lever-seated-hip-adduction.mp4"}, "0599": {"id": "0599", "name": "Lever Seated Leg Curl", "file": "lever-seated-leg-curl.mp4"}, "0602": {"id": "0602", "name": "Lever Seated Reverse Fly", "file": "lever-seated-reverse-fly.mp4"}, "0604": {"id": "0604", "name": "Lever Shrug", "file": "lever-shrug.mp4"}, "0605": {"id": "0605", "name": "Lever Standing Calf Raise", "file": "lever-standing-calf-raise.mp4"}, "2286": {"id": "2286", "name": "Lever Standing Hip Extension", "file": "lever-standing-hip-extension.mp4"}, "drv-lever-standing-rear-kick": {"id": "drv-lever-standing-rear-kick", "name": "Lever Standing Rear Kick", "file": "lever-standing-rear-kick.mp4"}, "drv-lever-t-bar-row": {"id": "drv-lever-t-bar-row", "name": "Lever T-Bar Row", "file": "lever-t-bar-row.mp4"}, "0607": {"id": "0607", "name": "Lever Triceps Extension", "file": "lever-triceps-extension.mp4"}, "0865": {"id": "0865", "name": "Lying Leg Raise", "file": "lying-floor-leg-raise.mp4"}, "drv-stretching-quadriceps-lying-stretch": {"id": "drv-stretching-quadriceps-lying-stretch", "name": "Lying Quadriceps Stretch", "file": "stretching-quadriceps-lying-stretch.mp4"}, "1002": {"id": "1002", "name": "Lying Straight Leg Raise", "file": "lying-straight-leg-raise.mp4"}, "1405": {"id": "1405", "name": "Middle Back Stretch", "file": "stretching-middle-back-stretch-1.mp4"}, "0553": {"id": "0553", "name": "Military Press", "file": "military-press.mp4"}, "1403": {"id": "1403", "name": "Neck Side Stretch", "file": "stretching-neck-side-stretch.mp4"}, "drv-old-school-reverse-extensions": {"id": "drv-old-school-reverse-extensions", "name": "Old School Reverse Extensions", "file": "old-school-reverse-extensions.mp4"}, "drv-otis-ups": {"id": "drv-otis-ups", "name": "Otis-Up", "file": "otis-ups.mp4"}, "1259": {"id": "1259", "name": "Overhead Chest Stretch", "file": "stretching-above-head-chest-stretch.mp4"}, "drv-lever-pec-deck-fly": {"id": "drv-lever-pec-deck-fly", "name": "Pec Deck Fly", "file": "lever-pec-deck-fly.mp4"}, "1388": {"id": "1388", "name": "Peroneals Stretch", "file": "stretching-peroneals-stretch.mp4"}, "drv-stretching-plyo-side-lunge-stretch": {"id": "drv-stretching-plyo-side-lunge-stretch", "name": "Plyometric Side Lunge Stretch", "file": "stretching-plyo-side-lunge-stretch.mp4"}, "1429": {"id": "1429", "name": "Pull-Up (Wide Grip)", "file": "pull-up-wide-front-grip.mp4"}, "drv-chin-ups-pull-ups": {"id": "drv-chin-ups-pull-ups", "name": "Pull-Up / Chin-Up", "file": "chin-ups-pull-ups.mp4"}, "drv-push-ups": {"id": "drv-push-ups", "name": "Push-Up", "file": "push-ups.mp4"}, "0668": {"id": "0668", "name": "Rear Decline Bridge", "file": "rear-decline-bridge.mp4"}, "0669": {"id": "0669", "name": "Rear Deltoid Stretch", "file": "stretching-rear-deltoid-stretch.mp4"}, "drv-stretching-hip-flexor-stretch-rear-foot-elevated": {"id": "drv-stretching-hip-flexor-stretch-rear-foot-elevated", "name": "Rear Foot Elevated Hip Flexor Stretch", "file": "stretching-hip-flexor-stretch-rear-foot-elevated.mp4"}, "drv-band-high-fly": {"id": "drv-band-high-fly", "name": "Resistance Band High Fly", "file": "band-high-fly.mp4"}, "0672": {"id": "0672", "name": "Reverse Dip Stretch", "file": "stretching-reverse-dip.mp4"}, "0673": {"id": "0673", "name": "Reverse Grip Machine Lat Pulldown", "file": "reverse-grip-machine-lat-pulldown.mp4"}, "2327": {"id": "2327", "name": "Reverse Grip Pull-Up", "file": "reverse-grip-pull-up.mp4"}, "0207": {"id": "0207", "name": "Reverse-Grip Cable Lat Pulldown", "file": "cable-bar-lateral-pulldown-reverse-grip.mp4"}, "drv-ring-high-row": {"id": "drv-ring-high-row", "name": "Ring High Row", "file": "ring-high-row.mp4"}, "1585": {"id": "1585", "name": "Runner's Stretch", "file": "stretching-runners-stretch.mp4"}, "drv-running": {"id": "drv-running", "name": "Running", "file": "running.mp4"}, "3012": {"id": "3012", "name": "Scapula Dips", "file": "scapula-dips.mp4"}, "0285": {"id": "0285", "name": "Seated Alternating Dumbbell Curl", "file": "dumbbell-alternate-seated-biceps-curl.mp4"}, "drv-stretching-sitting-bent-over-back-stretch": {"id": "drv-stretching-sitting-bent-over-back-stretch", "name": "Seated Bent Over Back Stretch", "file": "stretching-sitting-bent-over-back-stretch.mp4"}, "drv-stretching-boat-stretch": {"id": "drv-stretching-boat-stretch", "name": "Seated Boat Stretch", "file": "stretching-boat-stretch.mp4"}, "0208": {"id": "0208", "name": "Seated Cable Row (V-Grip)", "file": "cable-straight-back-seated-row-v-grip.mp4"}, "0218": {"id": "0218", "name": "Seated Cable Row (Wide-Grip)", "file": "cable-seated-row-wide-grip.mp4"}, "1390": {"id": "1390", "name": "Seated Calf Stretch", "file": "stretching-seated-calf-stretch.mp4"}, "0289": {"id": "0289", "name": "Seated Dumbbell Shoulder Press", "file": "dumbbell-bench-seated-press.mp4"}, "0690": {"id": "0690", "name": "Seated Lower Back Stretch", "file": "stretching-seated-lower-back-stretch.mp4"}, "2203": {"id": "2203", "name": "Seated Shoulder Flexor, Depressor, Retractor Stretch", "file": "stretching-seated-shoulder-flexor-depresor-retractor.mp4"}, "drv-stretching-seated-twist-straight-arm": {"id": "drv-stretching-seated-twist-straight-arm", "name": "Seated Twist Stretch (Straight Arm)", "file": "stretching-seated-twist-straight-arm.mp4"}, "1587": {"id": "1587", "name": "Seated Wide Angle Pose Sequence", "file": "stretching-seated-wide-angle-pose-sequence.mp4"}, "0651": {"id": "0651", "name": "Shoulder-Width Pull-Up", "file": "pull-up-shoulder-grip.mp4"}, "drv-stretching-slopes-towards-stretch": {"id": "drv-stretching-slopes-towards-stretch", "name": "Side Bend Stretch", "file": "stretching-slopes-towards-stretch.mp4"}, "0705": {"id": "0705", "name": "Side Plank", "file": "side-bridge-side-plank.mp4"}, "0721": {"id": "0721", "name": "Side Wrist Pull Stretch", "file": "stretching-side-wrist-pull-stretch.mp4"}, "1757": {"id": "1757", "name": "Single Dumbbell Stiff-Leg Deadlift", "file": "single-dumbbell-stiff-leg-deadlift.mp4"}, "drv-stretching-single-leg-stretch-bent-knee": {"id": "drv-stretching-single-leg-stretch-bent-knee", "name": "Single Leg Stretch (Bent Knee)", "file": "stretching-single-leg-stretch-bent-knee.mp4"}, "drv-stretching-single-straight-leg-stretch": {"id": "drv-stretching-single-straight-leg-stretch", "name": "Single Straight Leg Stretch", "file": "stretching-single-straight-leg-stretch.mp4"}, "drv-sit-ups": {"id": "drv-sit-ups", "name": "Sit-Up", "file": "sit-ups.mp4"}, "0738": {"id": "0738", "name": "Sled 45 Degree Calf Press", "file": "sled-45-degree-calf-press.mp4"}, "0740": {"id": "0740", "name": "Sled 45 Degree Wide Leg Press", "file": "sled-45-degree-leg-wide-press.mp4"}, "0743": {"id": "0743", "name": "Sled Hack Squat", "file": "sled-hack-squat.mp4"}, "0750": {"id": "0750", "name": "Smith Chair Squat", "file": "smith-chair-squat.mp4"}, "1393": {"id": "1393", "name": "Smith Machine Calf Raise", "file": "smith-calf-raise.mp4"}, "0752": {"id": "0752", "name": "Smith Machine Deadlift", "file": "smith-deadlift-deadlift-1.mp4"}, "0748": {"id": "0748", "name": "Smith Machine Leg Press", "file": "smith-leg-press.mp4"}, "0765": {"id": "0765", "name": "Smith Seated Shoulder Press", "file": "smith-seated-shoulder-press.mp4"}, "0777": {"id": "0777", "name": "Spell Caster", "file": "spell-caster.mp4"}, "1363": {"id": "1363", "name": "Spine Stretch", "file": "stretching-spine-stretch.mp4"}, "drv-squat": {"id": "drv-squat", "name": "Squat", "file": "squat.mp4"}, "drv-stretching-stairs-calf-stretch": {"id": "drv-stretching-stairs-calf-stretch", "name": "Stairs Calf Stretch", "file": "stretching-stairs-calf-stretch.mp4"}, "drv-stretching-adductor-stretch": {"id": "drv-stretching-adductor-stretch", "name": "Standing Adductor Stretch", "file": "stretching-adductor-stretch.mp4"}, "drv-stretching-standing-back-rotation-stretch": {"id": "drv-stretching-standing-back-rotation-stretch", "name": "Standing Back Rotation Stretch", "file": "stretching-standing-back-rotation-stretch.mp4"}, "drv-stretching-standing-bench-calf-stretch": {"id": "drv-stretching-standing-bench-calf-stretch", "name": "Standing Bench Calf Stretch", "file": "stretching-standing-bench-calf-stretch.mp4"}, "1511": {"id": "1511", "name": "Standing Hamstring Stretch", "file": "stretching-hamstring-stretch.mp4"}, "drv-stretching-ceiling-look-stretch": {"id": "drv-stretching-ceiling-look-stretch", "name": "Standing Hip Flexor and Abdominal Stretch", "file": "stretching-ceiling-look-stretch.mp4"}, "0484": {"id": "0484", "name": "Standing Knee Raise Stretch", "file": "stretching-knee-raise.mp4"}, "0794": {"id": "0794", "name": "Standing Lateral Stretch", "file": "stretching-standing-lateral-stretch-1.mp4"}, "drv-stretching-quadriceps-stretch": {"id": "drv-stretching-quadriceps-stretch", "name": "Standing Quadriceps Stretch", "file": "stretching-quadriceps-stretch.mp4"}, "drv-stretching-standing-reach-up-back-rotation-stretch": {"id": "drv-stretching-standing-reach-up-back-rotation-stretch", "name": "Standing Reach Up Back Rotation Stretch", "file": "stretching-standing-reach-up-back-rotation-stretch.mp4"}, "drv-stretching-standing-side-bend-bent-arm": {"id": "drv-stretching-standing-side-bend-bent-arm", "name": "Standing Side Bend Stretch (Bent Arm)", "file": "stretching-standing-side-bend-bent-arm.mp4"}, "0796": {"id": "0796", "name": "Standing Wheel Rollout", "file": "stretching-standing-wheel-rollout.mp4"}, "2138": {"id": "2138", "name": "Stationary Bike", "file": "stationary-bike.mp4"}, "0350": {"id": "0350", "name": "Supine Dumbbell Biceps Curl", "file": "lying-supine-dumbbell-curl.mp4"}, "drv-treadmill-running": {"id": "drv-treadmill-running", "name": "Treadmill Running", "file": "treadmill-running.mp4"}, "drv-triceps-dips": {"id": "drv-triceps-dips", "name": "Triceps Dips", "file": "triceps-dips.mp4"}, "0985": {"id": "0985", "name": "Twisting Crunch", "file": "twisting-crunch.mp4"}, "drv-v-up": {"id": "drv-v-up", "name": "V-Up", "file": "v-up.mp4"}, "0826": {"id": "0826", "name": "Vertical Leg Raise (on parallel bars)", "file": "vertical-leg-raise-on-parallel-bars.mp4"}, "drv-walk-wave-machine": {"id": "drv-walk-wave-machine", "name": "Walk Wave Machine", "file": "walk-wave-machine.mp4"}, "0832": {"id": "0832", "name": "Weighted Leg Extension Crunch", "file": "weighted-leg-extension-crunch.mp4"}, "0851": {"id": "0851", "name": "Weighted Sissy Squat", "file": "weighted-sissy-squat.mp4"}, "0853": {"id": "0853", "name": "Weighted Standing Curl", "file": "weighted-standing-curl.mp4"}, "drv-cable-bar-lateral-pulldown-wide-shoulder-grip": {"id": "drv-cable-bar-lateral-pulldown-wide-shoulder-grip", "name": "Wide Grip Cable Lat Pulldown", "file": "cable-bar-lateral-pulldown-wide-shoulder-grip.mp4"}, "1428": {"id": "1428", "name": "Wrist Circles", "file": "stretching-wrist-circles.mp4"}} as const;
+-export const DEFAULT_VIDEO_MAP:Record<string,string>={"stationary-bike": "2138", "incline-dumbbell-press": "0314", "barbell-bench-press": "0025", "dumbbell-fly": "0308", "pec-deck": "drv-lever-pec-deck-fly", "pull-up": "drv-chin-ups-pull-ups", "machine-high-row": "0581", "straight-arm-cable-pulldown": "0238", "dumbbell-shrug": "0406", "reverse-pec-deck": "0602", "rope-triceps-pushdown": "0200", "barbell-curl": "0031", "dumbbell-curl": "0294", "concentration-curl": "0297", "ez-bar-skullcrusher": "0061", "close-grip-bench-press": "0030", "hack-squat": "0743", "dumbbell-lunge": "0336", "front-squat": "0042", "seated-leg-curl": "0599", "lying-leg-curl": "0586", "leg-extension": "0585", "standing-calf-raise-machine": "0605", "seated-calf-raise": "0594", "hanging-leg-raise": "0474", "kneeling-cable-crunch": "0175", "arnold-press": "2137", "goblet-squat": "1760", "donkey-calf-raise": "0284", "single-arm-cable-front-raise": "0162", "cross-body-hammer-curl": "0298", "barbell-drag-curl": "0038", "decline-barbell-bench-press": "0033", "neutral-grip-dumbbell-bench-press": "0340", "seated-dumbbell-lateral-raise": "0396", "dumbbell-sumo-squat": "new-dumbbell-sumo-squat", "seated-smith-shoulder-press": "0765", "standing-barbell-shrug": "0095", "close-grip-push-up": "0259", "flat-cable-fly": "0620", "hammer-strength-incline-press": "1299", "incline-push-up": "0493", "deficit-push-up": "1274", "close-grip-lat-pulldown": "0974", "barbell-front-raise": "0041", "dumbbell-front-raise": "0310", "cable-rear-delt-row": "0203", "dumbbell-upright-row": "0437", "machine-shrug": "0604", "seated-alternating-dumbbell-curl": "0285", "barbell-reverse-wrist-curl": "0082", "cable-skullcrusher": "0186", "dumbbell-skullcrusher": "0351", "machine-triceps-extension": "0607", "dumbbell-stiff-leg-deadlift": "0432", "dumbbell-lateral-raise": "0334", "dumbbell-rear-delt-row": "0377", "incline-barbell-press": "0047", "chest-dip": "drv-chest-dips", "neutral-grip-pull-up": "0253", "single-arm-cable-lateral-raise": "0192", "dumbbell-shoulder-press": "0289", "incline-dumbbell-curl": "0322", "overhead-rope-triceps-extension": "0194", "seated-cable-row": "0208", "leg-press-wide-stance": "0740", "leg-press-narrow-stance": "drv-close-feet-leg-press", "barbell-squat": "1435", "decline-dumbbell-press": "0301", "underhand-lat-pulldown": "0207", "spider-dumbbell-curl": "0374", "seated-hip-abduction-machine": "0597", "incline-dumbbell-fly": "0319", "standing-barbell-overhead-press": "0553", "one-arm-dumbbell-triceps-kickback": "0333", "smith-standing-calf-raise": "1393", "plate-loaded-incline-chest-press": "1299", "behind-back-barbell-wrist-curl": "0104", "seated-hip-adduction-machine": "0598", "standard-push-up": "drv-push-ups", "straight-bar-triceps-pushdown": "1723", "45-degree-back-extension": "0489", "seated-machine-lateral-raise": "0584", "incline-dumbbell-hammer-curl": "0320", "single-leg-dumbbell-calf-raise": "0409", "seated-triceps-dip-machine": "1451", "leg-press-calf-raise": "0738", "standing-ez-bar-curl": "2407", "prone-incline-dumbbell-rear-delt-raise": "0326", "bench-triceps-dip": "drv-bench-dips", "neutral-grip-seated-row": "0208", "wide-grip-seated-row": "0218", "prone-dumbbell-row": "0327", "reverse-cable-crossover": "0154", "single-arm-preacher-curl": "0402", "dumbbell-leg-curl": "0343", "barbell-stiff-leg-deadlift": "0116"};
++export const DEFAULT_VIDEO_MAP:Record<string,string>={"stationary-bike": "2138", "incline-dumbbell-press": "0314", "barbell-bench-press": "0025", "dumbbell-fly": "0308", "pec-deck": "drv-lever-pec-deck-fly", "pull-up": "drv-chin-ups-pull-ups", "machine-high-row": "0581", "straight-arm-cable-pulldown": "0238", "dumbbell-shrug": "0406", "reverse-pec-deck": "0602", "rope-triceps-pushdown": "0200", "barbell-curl": "0031", "dumbbell-curl": "0294", "concentration-curl": "0297", "ez-bar-skullcrusher": "0061", "close-grip-bench-press": "0030", "hack-squat": "0743", "dumbbell-lunge": "0336", "front-squat": "0042", "seated-leg-curl": "0599", "lying-leg-curl": "0586", "leg-extension": "0585", "standing-calf-raise-machine": "0605", "seated-calf-raise": "0594", "hanging-leg-raise": "0474", "kneeling-cable-crunch": "0175", "arnold-press": "2137", "goblet-squat": "1760", "donkey-calf-raise": "0284", "single-arm-cable-front-raise": "0162", "cross-body-hammer-curl": "0298", "barbell-drag-curl": "0038", "decline-barbell-bench-press": "0033", "neutral-grip-dumbbell-bench-press": "0340", "seated-dumbbell-lateral-raise": "0396", "dumbbell-sumo-squat": "new-dumbbell-sumo-squat", "seated-smith-shoulder-press": "0765", "standing-barbell-shrug": "0095", "close-grip-push-up": "0259", "flat-cable-fly": "0620", "hammer-strength-incline-press": "1299", "incline-push-up": "0493", "deficit-push-up": "1274", "close-grip-lat-pulldown": "0974", "barbell-front-raise": "0041", "dumbbell-front-raise": "0310", "cable-rear-delt-row": "0203", "dumbbell-upright-row": "0437", "machine-shrug": "0604", "seated-alternating-dumbbell-curl": "0285", "barbell-reverse-wrist-curl": "0082", "cable-skullcrusher": "0186", "dumbbell-skullcrusher": "0351", "machine-triceps-extension": "0607", "dumbbell-stiff-leg-deadlift": "0432", "dumbbell-lateral-raise": "0334", "dumbbell-rear-delt-row": "0377", "incline-barbell-press": "0047", "chest-dip": "drv-chest-dips", "neutral-grip-pull-up": "0253", "single-arm-cable-lateral-raise": "0192", "dumbbell-shoulder-press": "0289", "incline-dumbbell-curl": "0322", "overhead-rope-triceps-extension": "0194", "seated-cable-row": "0208", "leg-press-wide-stance": "0740", "leg-press-narrow-stance": "drv-close-feet-leg-press", "barbell-squat": "1435", "decline-dumbbell-press": "0301", "underhand-lat-pulldown": "0207", "spider-dumbbell-curl": "0374", "seated-hip-abduction-machine": "0597", "incline-dumbbell-fly": "0319", "standing-barbell-overhead-press": "0553", "one-arm-dumbbell-triceps-kickback": "0333", "smith-standing-calf-raise": "1393", "plate-loaded-incline-chest-press": "1299", "behind-back-barbell-wrist-curl": "0104", "seated-hip-adduction-machine": "0598", "standard-push-up": "drv-push-ups", "straight-bar-triceps-pushdown": "1723", "45-degree-back-extension": "0489", "seated-machine-lateral-raise": "0584", "incline-dumbbell-hammer-curl": "0320", "single-leg-dumbbell-calf-raise": "0409", "seated-triceps-dip-machine": "1451", "leg-press-calf-raise": "0738", "standing-ez-bar-curl": "2407", "prone-incline-dumbbell-rear-delt-raise": "0326", "bench-triceps-dip": "drv-bench-dips", "neutral-grip-seated-row": "0208", "wide-grip-seated-row": "0218", "prone-dumbbell-row": "0327", "reverse-cable-crossover": "0154", "single-arm-preacher-curl": "0402", "dumbbell-leg-curl": "0343", "barbell-stiff-leg-deadlift": "0116", "cable-crossover": "1269", "high-to-low-cable-fly": "1269", "wide-grip-lat-pulldown": "drv-cable-bar-lateral-pulldown-wide-shoulder-grip", "overhead-dumbbell-triceps-extension": "2188", "chest-supported-dumbbell-row": "0327", "seated-dumbbell-wrist-curl": "0369", "machine-preacher-curl": "0592", "seated-single-arm-overhead-dumbbell-triceps-extension": "0306", "hanging-knee-raise": "1764", "high-to-low-cable-wood-chop": "0862", "barbell-upright-row": "0123", "cable-pullover": "0238", "single-arm-lat-pulldown": "2616", "seated-bench-single-arm-cable-lat-pulldown": "2616", "bent-over-cable-reverse-fly": "0154"};
+ export function videoForExercise(id:string,overrides:Record<string,string|null>={}){const key=Object.hasOwn(overrides,id)?overrides[id]:DEFAULT_VIDEO_MAP[id];return key&&Object.hasOwn(MALE_VIDEO_CATALOG,key)?MALE_VIDEO_CATALOG[key as keyof typeof MALE_VIDEO_CATALOG]:null}

@@ -1,0 +1,948 @@
+{
+  "total": 300,
+  "mapped": 112,
+  "missing": 188,
+  "complete": false,
+  "unmappedExercises": [
+    {
+      "id": "machine-chest-press",
+      "nameFa": "پرس سینه دستگاه دست موازی",
+      "nameEn": "Neutral-Grip Machine Chest Press"
+    },
+    {
+      "id": "standard-grip-machine-chest-press",
+      "nameFa": "پرس سینه دستگاه دست معمولی",
+      "nameEn": "Standard-Grip Machine Chest Press"
+    },
+    {
+      "id": "dumbbell-bench-press",
+      "nameFa": "پرس سینه دمبل",
+      "nameEn": "Dumbbell Bench Press"
+    },
+    {
+      "id": "incline-cable-fly",
+      "nameFa": "فلای بالا سینه سیم‌کش",
+      "nameEn": "Incline Cable Fly"
+    },
+    {
+      "id": "smith-incline-press",
+      "nameFa": "پرس بالا سینه اسمیت",
+      "nameEn": "Smith Machine Incline Press"
+    },
+    {
+      "id": "barbell-row",
+      "nameFa": "زیربغل هالتر خم",
+      "nameEn": "Barbell Row"
+    },
+    {
+      "id": "one-arm-dumbbell-row",
+      "nameFa": "زیربغل دمبل تک‌دست",
+      "nameEn": "One Arm Dumbbell Row"
+    },
+    {
+      "id": "t-bar-row",
+      "nameFa": "زیربغل تی‌بار دستگاه",
+      "nameEn": "Chest-Supported T-Bar Row"
+    },
+    {
+      "id": "reverse-dumbbell-fly",
+      "nameFa": "نشر خم دمبل",
+      "nameEn": "Reverse Dumbbell Fly"
+    },
+    {
+      "id": "seated-dumbbell-rear-delt-raise",
+      "nameFa": "نشر خم دمبل نشسته",
+      "nameEn": "Seated Dumbbell Rear Delt Raise"
+    },
+    {
+      "id": "machine-shoulder-press",
+      "nameFa": "پرس سرشانه دستگاه",
+      "nameEn": "Machine Shoulder Press"
+    },
+    {
+      "id": "hammer-curl",
+      "nameFa": "جلو بازو چکشی دمبل",
+      "nameEn": "Hammer Curl"
+    },
+    {
+      "id": "preacher-curl",
+      "nameFa": "جلو بازو لاری هالتر EZ",
+      "nameEn": "Preacher Curl"
+    },
+    {
+      "id": "reverse-ez-bar-curl",
+      "nameFa": "جلو بازو معکوس هالتر EZ",
+      "nameEn": "Reverse EZ-Bar Curl"
+    },
+    {
+      "id": "dead-bug-legs",
+      "nameFa": "ددباگ پا",
+      "nameEn": "Dead Bug — Legs Only"
+    },
+    {
+      "id": "chin-retraction",
+      "nameFa": "جمع کردن چانه",
+      "nameEn": "Chin Retraction"
+    },
+    {
+      "id": "neutral-lat-pulldown",
+      "nameFa": "لت سیم‌کش دست خنثی",
+      "nameEn": "Neutral-Grip Lat Pulldown"
+    },
+    {
+      "id": "cable-face-pull",
+      "nameFa": "فیس پول سیم‌کش",
+      "nameEn": "Cable Face Pull"
+    },
+    {
+      "id": "cable-curl",
+      "nameFa": "جلو بازو سیم‌کش",
+      "nameEn": "Cable Curl"
+    },
+    {
+      "id": "bird-dog",
+      "nameFa": "برد داگ",
+      "nameEn": "Bird Dog"
+    },
+    {
+      "id": "wall-slide",
+      "nameFa": "وال اسلاید",
+      "nameEn": "Wall Slide"
+    },
+    {
+      "id": "leg-press",
+      "nameFa": "پرس پا خوابیده معمولی",
+      "nameEn": "45-Degree Leg Press — Standard Stance"
+    },
+    {
+      "id": "romanian-deadlift",
+      "nameFa": "ددلیفت رومانیایی هالتر",
+      "nameEn": "Romanian Deadlift"
+    },
+    {
+      "id": "bulgarian-split-squat",
+      "nameFa": "اسپلیت اسکوات بلغاری دمبل",
+      "nameEn": "Bulgarian Split Squat"
+    },
+    {
+      "id": "single-leg-romanian-deadlift",
+      "nameFa": "ددلیفت رومانیایی تک‌پا دمبل",
+      "nameEn": "Single-Leg Romanian Deadlift"
+    },
+    {
+      "id": "glute-bridge",
+      "nameFa": "پل باسن",
+      "nameEn": "Glute Bridge"
+    },
+    {
+      "id": "barbell-hip-thrust",
+      "nameFa": "هیپ تراست هالتر",
+      "nameEn": "Barbell Hip Thrust"
+    },
+    {
+      "id": "cable-glute-kickback",
+      "nameFa": "کیک‌بک باسن سیم‌کش",
+      "nameEn": "Cable Glute Kickback"
+    },
+    {
+      "id": "supported-calf-raise",
+      "nameFa": "ساق پا ایستاده با تکیه",
+      "nameEn": "Supported Calf Raise"
+    },
+    {
+      "id": "tibialis-raise",
+      "nameFa": "تیبیالیس رِیز کنار دیوار",
+      "nameEn": "Wall-Supported Tibialis Raise"
+    },
+    {
+      "id": "kneeling-side-plank",
+      "nameFa": "ساید پلانک زانو زده",
+      "nameEn": "Kneeling Side Plank"
+    },
+    {
+      "id": "captains-chair-knee-raise",
+      "nameFa": "شکم خلبانی زانو خم",
+      "nameEn": "Captains Chair Knee Raise"
+    },
+    {
+      "id": "crunch",
+      "nameFa": "کرانچ شکم",
+      "nameEn": "Crunch"
+    },
+    {
+      "id": "forearm-plank",
+      "nameFa": "پلانک ساعد",
+      "nameEn": "Forearm Plank"
+    },
+    {
+      "id": "dumbbell-pullover",
+      "nameFa": "پول‌اور دمبل روی نیمکت",
+      "nameEn": "Dumbbell Pullover"
+    },
+    {
+      "id": "single-arm-cable-triceps-kickback",
+      "nameFa": "پشت بازو خم تک‌دست سیم‌کش",
+      "nameEn": "Single-Arm Cable Triceps Kickback"
+    },
+    {
+      "id": "assisted-nordic-hamstring-curl",
+      "nameFa": "پشت پا نوردیک کمکی",
+      "nameEn": "Assisted Nordic Hamstring Curl"
+    },
+    {
+      "id": "side-lying-hip-abduction",
+      "nameFa": "دور کردن ران خوابیده به پهلو",
+      "nameEn": "Side-Lying Hip Abduction"
+    },
+    {
+      "id": "ab-wheel-rollout",
+      "nameFa": "رول‌اوت چرخ شکم زانو زده",
+      "nameEn": "Kneeling Ab Wheel Rollout"
+    },
+    {
+      "id": "pallof-press",
+      "nameFa": "پالوف پرس سیم‌کش",
+      "nameEn": "Standing Pallof Press"
+    },
+    {
+      "id": "smith-flat-bench-press",
+      "nameFa": "پرس سینه تخت اسمیت",
+      "nameEn": "Smith Machine Flat Bench Press"
+    },
+    {
+      "id": "single-arm-bayesian-cable-curl",
+      "nameFa": "جلو بازو بیزیَن تک‌دست سیم‌کش",
+      "nameEn": "Single-Arm Bayesian Cable Curl"
+    },
+    {
+      "id": "reverse-grip-triceps-pushdown",
+      "nameFa": "پشت بازو سیم‌کش دست برعکس",
+      "nameEn": "Reverse-Grip Cable Triceps Pushdown"
+    },
+    {
+      "id": "dumbbell-step-up",
+      "nameFa": "استپ‌آپ دمبل",
+      "nameEn": "Dumbbell Step-Up"
+    },
+    {
+      "id": "sumo-deadlift",
+      "nameFa": "ددلیفت سومو هالتر",
+      "nameEn": "Barbell Sumo Deadlift"
+    },
+    {
+      "id": "reverse-crunch",
+      "nameFa": "کرانچ معکوس",
+      "nameEn": "Reverse Crunch"
+    },
+    {
+      "id": "short-lever-copenhagen-plank",
+      "nameFa": "کپنهاگ پلانک اهرم کوتاه",
+      "nameEn": "Short-Lever Copenhagen Side Plank"
+    },
+    {
+      "id": "prone-incline-y-raise",
+      "nameFa": "نشر Y خوابیده روی میز شیب‌دار",
+      "nameEn": "Prone Incline Bench Y Raise"
+    },
+    {
+      "id": "tall-kneeling-single-arm-cable-lat-pulldown",
+      "nameFa": "لت تک‌دست سیم‌کش زانو زده",
+      "nameEn": "Tall-Kneeling Single-Arm Cable Lat Pulldown"
+    },
+    {
+      "id": "standing-side-single-arm-cable-lat-pulldown",
+      "nameFa": "لت تک‌دست کنار دستگاه کراس",
+      "nameEn": "Standing Side Single-Arm Cable Lat Pulldown"
+    },
+    {
+      "id": "smith-reverse-lunge",
+      "nameFa": "لانج معکوس اسمیت",
+      "nameEn": "Smith Machine Reverse Lunge"
+    },
+    {
+      "id": "plate-loaded-chest-supported-row",
+      "nameFa": "قایقی دستگاه صفحه‌ای با تکیه سینه",
+      "nameEn": "Plate-Loaded Chest-Supported Row"
+    },
+    {
+      "id": "plate-loaded-pullover-machine",
+      "nameFa": "پول‌اور دستگاه صفحه‌ای",
+      "nameEn": "Plate-Loaded Pullover Machine"
+    },
+    {
+      "id": "smith-romanian-deadlift",
+      "nameFa": "ددلیفت رومانیایی اسمیت",
+      "nameEn": "Smith Machine Romanian Deadlift"
+    },
+    {
+      "id": "seated-dumbbell-reverse-wrist-curl",
+      "nameFa": "مچ معکوس دمبل نشسته",
+      "nameEn": "Seated Dumbbell Reverse Wrist Curl"
+    },
+    {
+      "id": "seated-single-arm-dumbbell-front-raise",
+      "nameFa": "نشر جلو تک‌دست دمبل نشسته",
+      "nameEn": "Seated Single-Arm Dumbbell Front Raise"
+    },
+    {
+      "id": "smith-close-grip-bench-press",
+      "nameFa": "پرس سینه دست جمع اسمیت",
+      "nameEn": "Smith Machine Close-Grip Bench Press"
+    },
+    {
+      "id": "dumbbell-lateral-lunge",
+      "nameFa": "لانج جانب دمبل",
+      "nameEn": "Dumbbell Lateral Lunge"
+    },
+    {
+      "id": "cable-pull-through",
+      "nameFa": "پول‌ترو سیم‌کش",
+      "nameEn": "Cable Pull-Through"
+    },
+    {
+      "id": "barbell-good-morning",
+      "nameFa": "گود مورنینگ هالتر",
+      "nameEn": "Barbell Good Morning"
+    },
+    {
+      "id": "smith-machine-back-squat",
+      "nameFa": "اسکوات اسمیت",
+      "nameEn": "Smith Machine Back Squat"
+    },
+    {
+      "id": "machine-rear-delt-row",
+      "nameFa": "روئینگ پشت شانه دستگاه با تکیه سینه",
+      "nameEn": "Chest-Supported Rear Delt Row Machine"
+    },
+    {
+      "id": "smith-machine-bent-over-row",
+      "nameFa": "زیربغل هالتر خم اسمیت",
+      "nameEn": "Smith Machine Bent-Over Row"
+    },
+    {
+      "id": "cable-upright-row",
+      "nameFa": "کول سیم‌کش دست جمع",
+      "nameEn": "Cable Upright Row"
+    },
+    {
+      "id": "pendulum-squat",
+      "nameFa": "اسکوات پاندولی دستگاه",
+      "nameEn": "Pendulum Squat Machine"
+    },
+    {
+      "id": "decline-bench-sit-up",
+      "nameFa": "درازونشست روی میز شیب منفی",
+      "nameEn": "Decline Bench Sit-Up"
+    },
+    {
+      "id": "resistance-band-pull-apart",
+      "nameFa": "باز کردن کش از جلو",
+      "nameEn": "Resistance Band Pull-Apart"
+    },
+    {
+      "id": "plate-loaded-decline-chest-press",
+      "nameFa": "پرس زیر سینه دستگاه صفحه‌ای",
+      "nameEn": "Plate-Loaded Decline Chest Press"
+    },
+    {
+      "id": "single-arm-landmine-row",
+      "nameFa": "زیربغل تک‌دست لندماین",
+      "nameEn": "Single-Arm Landmine Row"
+    },
+    {
+      "id": "dumbbell-hammer-preacher-curl",
+      "nameFa": "جلو بازو لاری چکشی دمبل",
+      "nameEn": "Dumbbell Hammer Preacher Curl"
+    },
+    {
+      "id": "single-leg-leg-extension",
+      "nameFa": "جلو پا دستگاه تک‌پا",
+      "nameEn": "Single-Leg Leg Extension"
+    },
+    {
+      "id": "single-leg-45-degree-leg-press",
+      "nameFa": "پرس پا ۴۵ درجه تک‌پا",
+      "nameEn": "Single-Leg 45-Degree Leg Press"
+    },
+    {
+      "id": "alternating-heel-taps",
+      "nameFa": "تاچ پاشنه تناوبی",
+      "nameEn": "Alternating Heel Taps"
+    },
+    {
+      "id": "standing-band-shoulder-external-rotation",
+      "nameFa": "چرخش خارجی شانه با کش ایستاده",
+      "nameEn": "Standing Band Shoulder External Rotation"
+    },
+    {
+      "id": "conventional-barbell-deadlift",
+      "nameFa": "ددلیفت هالتر معمولی",
+      "nameEn": "Conventional Barbell Deadlift"
+    },
+    {
+      "id": "weight-plate-front-raise",
+      "nameFa": "نشر جلو صفحه",
+      "nameEn": "Weight-Plate Front Raise"
+    },
+    {
+      "id": "plate-loaded-belt-squat",
+      "nameFa": "بلت اسکوات دستگاه صفحه‌ای",
+      "nameEn": "Plate-Loaded Belt Squat"
+    },
+    {
+      "id": "standing-cable-hip-abduction",
+      "nameFa": "دورکردن پا سیم‌کش ایستاده",
+      "nameEn": "Standing Cable Hip Abduction"
+    },
+    {
+      "id": "standing-cable-pallof-press",
+      "nameFa": "پالوف پرس سیم‌کش ایستاده",
+      "nameEn": "Standing Cable Pallof Press"
+    },
+    {
+      "id": "dumbbell-squeeze-press",
+      "nameFa": "اسکوییز پرس دمبل",
+      "nameEn": "Dumbbell Squeeze Press"
+    },
+    {
+      "id": "smith-machine-bulgarian-split-squat",
+      "nameFa": "اسپلیت اسکوات بلغاری اسمیت",
+      "nameEn": "Smith Machine Bulgarian Split Squat"
+    },
+    {
+      "id": "decline-push-up",
+      "nameFa": "شنا سوئدی پا بالا",
+      "nameEn": "Decline Push-Up"
+    },
+    {
+      "id": "glute-ham-raise",
+      "nameFa": "گلوت هم رِیز دستگاه",
+      "nameEn": "Glute-Ham Raise"
+    },
+    {
+      "id": "dumbbell-reverse-lunge",
+      "nameFa": "لانج معکوس دمبل",
+      "nameEn": "Dumbbell Reverse Lunge"
+    },
+    {
+      "id": "standing-single-leg-curl-machine",
+      "nameFa": "پشت پا ایستاده تک‌پا دستگاه",
+      "nameEn": "Standing Single-Leg Curl Machine"
+    },
+    {
+      "id": "stability-ball-crunch",
+      "nameFa": "کرانچ روی توپ",
+      "nameEn": "Stability-Ball Crunch"
+    },
+    {
+      "id": "open-book-thoracic-rotation",
+      "nameFa": "چرخش سینه‌ای کتاب‌باز",
+      "nameEn": "Side-Lying Open Book Thoracic Rotation"
+    },
+    {
+      "id": "standing-cable-rear-delt-fly",
+      "nameFa": "نشر پشت‌شانه سیم‌کش ایستاده",
+      "nameEn": "Standing Cable Rear-Delt Fly"
+    },
+    {
+      "id": "scapular-push-up",
+      "nameFa": "شنا کتف",
+      "nameEn": "Scapular Push-Up"
+    },
+    {
+      "id": "full-side-plank-hip-lift",
+      "nameFa": "بالا آوردن لگن در پلانک پهلو",
+      "nameEn": "Full Side Plank Hip Lift"
+    },
+    {
+      "id": "single-arm-dumbbell-bench-press",
+      "nameFa": "پرس سینه دمبل تک‌دست",
+      "nameEn": "Single-Arm Dumbbell Bench Press"
+    },
+    {
+      "id": "smith-machine-front-squat",
+      "nameFa": "فرانت اسکوات اسمیت",
+      "nameEn": "Smith Machine Front Squat"
+    },
+    {
+      "id": "prone-incline-bench-w-raise",
+      "nameFa": "حرکت W روی میز شیب‌دار",
+      "nameEn": "Prone Incline-Bench W Raise"
+    },
+    {
+      "id": "cat-cow-spinal-mobility",
+      "nameFa": "حرکت گربه گاو",
+      "nameEn": "Cat-Cow Spinal Mobility"
+    },
+    {
+      "id": "half-kneeling-landmine-press",
+      "nameFa": "پرس لندماین تک‌دست نیم‌زانو",
+      "nameEn": "Half-Kneeling Single-Arm Landmine Press"
+    },
+    {
+      "id": "barbell-seal-row",
+      "nameFa": "سیل‌رو هالتر",
+      "nameEn": "Barbell Seal Row"
+    },
+    {
+      "id": "barbell-box-squat",
+      "nameFa": "باکس اسکوات هالتر",
+      "nameEn": "Barbell Box Squat"
+    },
+    {
+      "id": "band-overhead-shoulder-mobility-raise",
+      "nameFa": "بالا بردن کش برای موبیلیتی شانه",
+      "nameEn": "Band Overhead Shoulder Mobility Raise"
+    },
+    {
+      "id": "plate-loaded-hip-thrust-machine",
+      "nameFa": "هیپ تراست دستگاه صفحه‌ای",
+      "nameEn": "Plate-Loaded Hip Thrust Machine"
+    },
+    {
+      "id": "medicine-ball-russian-twist",
+      "nameFa": "روسین توئیست با مدیسن‌بال",
+      "nameEn": "Medicine-Ball Russian Twist"
+    },
+    {
+      "id": "double-high-cable-biceps-curl",
+      "nameFa": "جلو بازو فیگوری سیم‌کش دوطرفه",
+      "nameEn": "Double High-Cable Biceps Curl"
+    },
+    {
+      "id": "crossed-cable-lateral-raise",
+      "nameFa": "نشر جانب سیم‌کش ضربدری",
+      "nameEn": "Crossed-Cable Lateral Raise"
+    },
+    {
+      "id": "smith-machine-shrug",
+      "nameFa": "شراگ اسمیت",
+      "nameEn": "Smith Machine Shrug"
+    },
+    {
+      "id": "rope-straight-arm-pulldown",
+      "nameFa": "پول‌اور سیم‌کش با طناب",
+      "nameEn": "Rope Straight-Arm Cable Pulldown"
+    },
+    {
+      "id": "low-to-high-cable-fly",
+      "nameFa": "کراس سیم‌کش از پایین به بالا",
+      "nameEn": "Low-to-High Cable Fly"
+    },
+    {
+      "id": "single-arm-cable-fly",
+      "nameFa": "فلای سینه سیم‌کش تک‌دست",
+      "nameEn": "Single-Arm Cable Fly"
+    },
+    {
+      "id": "single-arm-machine-chest-press",
+      "nameFa": "پرس سینه دستگاه تک‌دست",
+      "nameEn": "Single-Arm Machine Chest Press"
+    },
+    {
+      "id": "iso-lateral-chest-press",
+      "nameFa": "پرس سینه دستگاه ایزولترال",
+      "nameEn": "Iso-Lateral Chest Press"
+    },
+    {
+      "id": "hammer-strength-chest-press",
+      "nameFa": "پرس سینه همر استرنگث",
+      "nameEn": "Hammer Strength Chest Press"
+    },
+    {
+      "id": "smith-decline-press",
+      "nameFa": "پرس زیر سینه اسمیت",
+      "nameEn": "Smith Machine Decline Press"
+    },
+    {
+      "id": "feet-up-bench-press",
+      "nameFa": "پرس سینه هالتر پا بالا",
+      "nameEn": "Feet-Up Barbell Bench Press"
+    },
+    {
+      "id": "dumbbell-floor-press",
+      "nameFa": "پرس سینه دمبل روی زمین",
+      "nameEn": "Dumbbell Floor Press"
+    },
+    {
+      "id": "barbell-floor-press",
+      "nameFa": "پرس سینه هالتر روی زمین",
+      "nameEn": "Barbell Floor Press"
+    },
+    {
+      "id": "weighted-push-up",
+      "nameFa": "شنا سوئدی وزنه‌دار",
+      "nameEn": "Weighted Push-Up"
+    },
+    {
+      "id": "assisted-chest-dip",
+      "nameFa": "دیپ سینه دستگاه کمکی",
+      "nameEn": "Assisted Chest Dip"
+    },
+    {
+      "id": "cable-squeeze-press",
+      "nameFa": "اسکوییز پرس سیم‌کش",
+      "nameEn": "Cable Squeeze Press"
+    },
+    {
+      "id": "plate-squeeze-press",
+      "nameFa": "اسکوییز پرس صفحه",
+      "nameEn": "Plate Squeeze Press"
+    },
+    {
+      "id": "reverse-grip-bench-press",
+      "nameFa": "پرس سینه هالتر مچ برعکس",
+      "nameEn": "Reverse-Grip Bench Press"
+    },
+    {
+      "id": "reverse-grip-incline-press",
+      "nameFa": "پرس بالا سینه هالتر مچ برعکس",
+      "nameEn": "Reverse-Grip Incline Press"
+    },
+    {
+      "id": "underhand-seated-cable-row",
+      "nameFa": "قایقی سیم‌کش مچ برعکس",
+      "nameEn": "Underhand Seated Cable Row"
+    },
+    {
+      "id": "single-arm-seated-cable-row",
+      "nameFa": "قایقی سیم‌کش تک‌دست",
+      "nameEn": "Single-Arm Seated Cable Row"
+    },
+    {
+      "id": "single-arm-machine-row",
+      "nameFa": "زیربغل دستگاه تک‌دست",
+      "nameEn": "Single-Arm Machine Row"
+    },
+    {
+      "id": "iso-lateral-high-row",
+      "nameFa": "زیربغل دستگاه ایزولترال های‌رو",
+      "nameEn": "Iso-Lateral High Row"
+    },
+    {
+      "id": "iso-lateral-low-row",
+      "nameFa": "زیربغل دستگاه ایزولترال لو‌رو",
+      "nameEn": "Iso-Lateral Low Row"
+    },
+    {
+      "id": "meadows-row",
+      "nameFa": "زیربغل میدوز رو",
+      "nameEn": "Meadows Row"
+    },
+    {
+      "id": "dumbbell-seal-row",
+      "nameFa": "سیل‌رو دمبل",
+      "nameEn": "Dumbbell Seal Row"
+    },
+    {
+      "id": "kneeling-straight-arm-pulldown",
+      "nameFa": "پول‌اور سیم‌کش زانو زده",
+      "nameEn": "Kneeling Straight-Arm Pulldown"
+    },
+    {
+      "id": "medium-grip-lat-pulldown",
+      "nameFa": "لت سیم‌کش دست متوسط",
+      "nameEn": "Medium-Grip Lat Pulldown"
+    },
+    {
+      "id": "assisted-pull-up",
+      "nameFa": "بارفیکس دستگاه کمکی",
+      "nameEn": "Assisted Pull-Up"
+    },
+    {
+      "id": "chin-up",
+      "nameFa": "بارفیکس مچ برعکس",
+      "nameEn": "Chin-Up"
+    },
+    {
+      "id": "scapular-pull-up",
+      "nameFa": "بارفیکس کتف",
+      "nameEn": "Scapular Pull-Up"
+    },
+    {
+      "id": "rack-pull",
+      "nameFa": "رک پول هالتر",
+      "nameEn": "Barbell Rack Pull"
+    },
+    {
+      "id": "trap-bar-deadlift",
+      "nameFa": "ددلیفت ترپ‌بار",
+      "nameEn": "Trap-Bar Deadlift"
+    },
+    {
+      "id": "snatch-grip-deadlift",
+      "nameFa": "ددلیفت دست باز",
+      "nameEn": "Snatch-Grip Deadlift"
+    },
+    {
+      "id": "cable-row-to-hip",
+      "nameFa": "قایقی سیم‌کش به سمت لگن",
+      "nameEn": "Cable Row to Hip"
+    },
+    {
+      "id": "face-pull-row",
+      "nameFa": "فیس پول رو",
+      "nameEn": "Face Pull Row"
+    },
+    {
+      "id": "cable-front-raise",
+      "nameFa": "نشر جلو سیم‌کش",
+      "nameEn": "Cable Front Raise"
+    },
+    {
+      "id": "leaning-cable-lateral-raise",
+      "nameFa": "نشر جانب سیم‌کش با تکیه",
+      "nameEn": "Leaning Cable Lateral Raise"
+    },
+    {
+      "id": "lying-cable-lateral-raise",
+      "nameFa": "نشر جانب سیم‌کش خوابیده",
+      "nameEn": "Lying Cable Lateral Raise"
+    },
+    {
+      "id": "incline-bench-lateral-raise",
+      "nameFa": "نشر جانب دمبل روی میز شیب‌دار",
+      "nameEn": "Incline-Bench Dumbbell Lateral Raise"
+    },
+    {
+      "id": "standing-machine-lateral-raise",
+      "nameFa": "نشر جانب دستگاه ایستاده",
+      "nameEn": "Standing Machine Lateral Raise"
+    },
+    {
+      "id": "behind-back-cable-lateral-raise",
+      "nameFa": "نشر جانب سیم‌کش از پشت بدن",
+      "nameEn": "Behind-the-Back Cable Lateral Raise"
+    },
+    {
+      "id": "cable-y-raise",
+      "nameFa": "نشر Y سیم‌کش",
+      "nameEn": "Cable Y Raise"
+    },
+    {
+      "id": "dumbbell-y-raise",
+      "nameFa": "نشر Y دمبل",
+      "nameEn": "Dumbbell Y Raise"
+    },
+    {
+      "id": "high-incline-dumbbell-press",
+      "nameFa": "پرس دمبل شیب زیاد",
+      "nameEn": "High-Incline Dumbbell Press"
+    },
+    {
+      "id": "neutral-grip-machine-shoulder-press",
+      "nameFa": "پرس سرشانه دستگاه دست موازی",
+      "nameEn": "Neutral-Grip Machine Shoulder Press"
+    },
+    {
+      "id": "single-arm-machine-shoulder-press",
+      "nameFa": "پرس سرشانه دستگاه تک‌دست",
+      "nameEn": "Single-Arm Machine Shoulder Press"
+    },
+    {
+      "id": "standing-landmine-press",
+      "nameFa": "پرس لندماین تک‌دست ایستاده",
+      "nameEn": "Standing Single-Arm Landmine Press"
+    },
+    {
+      "id": "cable-shrug",
+      "nameFa": "شراگ سیم‌کش",
+      "nameEn": "Cable Shrug"
+    },
+    {
+      "id": "ez-bar-preacher-curl",
+      "nameFa": "جلو بازو لاری هالتر EZ دست جمع",
+      "nameEn": "EZ-Bar Preacher Curl"
+    },
+    {
+      "id": "cable-preacher-curl",
+      "nameFa": "جلو بازو لاری سیم‌کش",
+      "nameEn": "Cable Preacher Curl"
+    },
+    {
+      "id": "cable-concentration-curl",
+      "nameFa": "جلو بازو تمرکزی سیم‌کش",
+      "nameEn": "Cable Concentration Curl"
+    },
+    {
+      "id": "rope-hammer-curl",
+      "nameFa": "جلو بازو چکشی طناب سیم‌کش",
+      "nameEn": "Rope Hammer Curl"
+    },
+    {
+      "id": "cable-hammer-curl",
+      "nameFa": "جلو بازو چکشی سیم‌کش",
+      "nameEn": "Cable Hammer Curl"
+    },
+    {
+      "id": "zottman-curl",
+      "nameFa": "جلو بازو زاتمن دمبل",
+      "nameEn": "Zottman Curl"
+    },
+    {
+      "id": "incline-alternating-dumbbell-curl",
+      "nameFa": "جلو بازو دمبل تناوبی روی میز شیب‌دار",
+      "nameEn": "Incline Alternating Dumbbell Curl"
+    },
+    {
+      "id": "dumbbell-drag-curl",
+      "nameFa": "جلو بازو درگ کرل دمبل",
+      "nameEn": "Dumbbell Drag Curl"
+    },
+    {
+      "id": "reverse-cable-curl",
+      "nameFa": "جلو بازو سیم‌کش مچ برعکس",
+      "nameEn": "Reverse Cable Curl"
+    },
+    {
+      "id": "reverse-dumbbell-curl",
+      "nameFa": "جلو بازو دمبل مچ برعکس",
+      "nameEn": "Reverse Dumbbell Curl"
+    },
+    {
+      "id": "barbell-wrist-curl",
+      "nameFa": "ساعد هالتر کف دست بالا",
+      "nameEn": "Barbell Wrist Curl"
+    },
+    {
+      "id": "cable-wrist-curl",
+      "nameFa": "ساعد سیم‌کش کف دست بالا",
+      "nameEn": "Cable Wrist Curl"
+    },
+    {
+      "id": "standing-wrist-curl-machine",
+      "nameFa": "ساعد دستگاه ایستاده",
+      "nameEn": "Standing Wrist Curl Machine"
+    },
+    {
+      "id": "preacher-wrist-curl-palms-up",
+      "nameFa": "میز ساعد کف دست بالا",
+      "nameEn": "Preacher-Bench Wrist Curl Palms Up"
+    },
+    {
+      "id": "single-arm-rope-triceps-pushdown",
+      "nameFa": "پشت بازو طناب تک‌دست",
+      "nameEn": "Single-Arm Rope Triceps Pushdown"
+    },
+    {
+      "id": "v-bar-triceps-pushdown",
+      "nameFa": "پشت بازو سیم‌کش میله V",
+      "nameEn": "V-Bar Triceps Pushdown"
+    },
+    {
+      "id": "ez-bar-triceps-pushdown",
+      "nameFa": "پشت بازو سیم‌کش میله EZ",
+      "nameEn": "EZ-Bar Cable Triceps Pushdown"
+    },
+    {
+      "id": "crossbody-cable-triceps-extension",
+      "nameFa": "پشت بازو سیم‌کش کراس‌بادی",
+      "nameEn": "Cross-Body Cable Triceps Extension"
+    },
+    {
+      "id": "rolling-dumbbell-triceps-extension",
+      "nameFa": "پشت بازو رولینگ دمبل",
+      "nameEn": "Rolling Dumbbell Triceps Extension"
+    },
+    {
+      "id": "jm-press",
+      "nameFa": "پرس JM هالتر",
+      "nameEn": "JM Press"
+    },
+    {
+      "id": "safety-bar-squat",
+      "nameFa": "اسکوات سیفتی‌بار",
+      "nameEn": "Safety-Bar Squat"
+    },
+    {
+      "id": "zercher-squat",
+      "nameFa": "زرچر اسکوات",
+      "nameEn": "Zercher Squat"
+    },
+    {
+      "id": "heel-elevated-goblet-squat",
+      "nameFa": "گابلت اسکوات پاشنه بالا",
+      "nameEn": "Heel-Elevated Goblet Squat"
+    },
+    {
+      "id": "cyclist-squat",
+      "nameFa": "سایکلست اسکوات",
+      "nameEn": "Cyclist Squat"
+    },
+    {
+      "id": "sissy-squat",
+      "nameFa": "سیسی اسکوات",
+      "nameEn": "Sissy Squat"
+    },
+    {
+      "id": "reverse-hack-squat",
+      "nameFa": "هاک اسکوات معکوس",
+      "nameEn": "Reverse Hack Squat"
+    },
+    {
+      "id": "hack-squat-high-feet",
+      "nameFa": "هاک اسکوات جای پا بالا",
+      "nameEn": "Hack Squat High Foot Placement"
+    },
+    {
+      "id": "hack-squat-low-feet",
+      "nameFa": "هاک اسکوات جای پا پایین",
+      "nameEn": "Hack Squat Low Foot Placement"
+    },
+    {
+      "id": "horizontal-leg-press",
+      "nameFa": "پرس پا افقی دستگاه",
+      "nameEn": "Horizontal Leg Press"
+    },
+    {
+      "id": "seated-leg-press-machine",
+      "nameFa": "پرس پا نشسته دستگاه",
+      "nameEn": "Seated Leg Press Machine"
+    },
+    {
+      "id": "vertical-leg-press",
+      "nameFa": "پرس پا عمودی",
+      "nameEn": "Vertical Leg Press"
+    },
+    {
+      "id": "cable-belt-squat",
+      "nameFa": "بلت اسکوات سیم‌کش",
+      "nameEn": "Cable Belt Squat"
+    },
+    {
+      "id": "dumbbell-split-squat",
+      "nameFa": "اسپلیت اسکوات دمبل",
+      "nameEn": "Dumbbell Split Squat"
+    },
+    {
+      "id": "front-foot-elevated-split-squat",
+      "nameFa": "اسپلیت اسکوات پای جلو بالا",
+      "nameEn": "Front-Foot-Elevated Split Squat"
+    },
+    {
+      "id": "dumbbell-walking-lunge",
+      "nameFa": "لانج راه‌رفتنی دمبل",
+      "nameEn": "Dumbbell Walking Lunge"
+    },
+    {
+      "id": "barbell-walking-lunge",
+      "nameFa": "لانج راه‌رفتنی هالتر",
+      "nameEn": "Barbell Walking Lunge"
+    },
+    {
+      "id": "dumbbell-curtsy-lunge",
+      "nameFa": "لانج کرتسی دمبل",
+      "nameEn": "Dumbbell Curtsy Lunge"
+    },
+    {
+      "id": "single-leg-lying-leg-curl",
+      "nameFa": "پشت پا خوابیده تک‌پا دستگاه",
+      "nameEn": "Single-Leg Lying Leg Curl"
+    },
+    {
+      "id": "cable-leg-curl",
+      "nameFa": "پشت پا سیم‌کش",
+      "nameEn": "Cable Leg Curl"
+    }
+  ]
+}
